@@ -60,6 +60,13 @@
   }
 }
 
+/* Sea decorations */
+.sea-decoration {
+  background: none !important;
+  border: none !important;
+  pointer-events: none !important;
+}
+
 /* Remove focus outline on click */
 .leaflet-interactive:focus { outline: none !important; }
 .leaflet-container :focus { outline: none !important; }

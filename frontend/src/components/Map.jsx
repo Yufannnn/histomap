@@ -4,6 +4,7 @@ import 'proj4';
 import 'proj4leaflet';
 import { MapContainer, GeoJSON, useMap } from 'react-leaflet';
 import { useBorders } from '../hooks/useBorders.js';
+import SeaDecorations from './SeaDecorations.jsx';
 import './Map.css';
 
 // Miller Cylindrical projection
@@ -229,6 +230,7 @@ function Map({ era, onRegionClick }) {
           worldCopyJump={false}
         >
           <MapFitter />
+          <SeaDecorations />
           {displayedGeojson && (
             <GeoJSON
               key={displayedEra.yearKey}
