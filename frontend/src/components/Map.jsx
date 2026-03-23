@@ -59,6 +59,7 @@ function featureStyle(feature) {
   const precision = props.BORDERPRECISION || 1;
   const culture = props.culture_group || 'other';
   const isTribal = culture === 'other' && precision === 1;
+  // Always use JS palette so colors match the legend exactly
   const color = VINTAGE_COLORS[culture] || VINTAGE_COLORS.other;
 
   return {
