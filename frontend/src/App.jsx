@@ -1,7 +1,6 @@
-import { useState, useCallback } from 'react';
-import Map from './components/Map.jsx';
-import Timeline from './components/Timeline.jsx';
-import InfoPanel from './components/InfoPanel.jsx';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import EraSection from './components/EraSection.jsx';
+import SideNav from './components/SideNav.jsx';
 import Search from './components/Search.jsx';
 import './App.css';
 
@@ -16,60 +15,84 @@ const ERAS = [
 ];
 
 function App() {
-  const [selectedEra, setSelectedEra] = useState(ERAS[0]);
-  const [selectedRegion, setSelectedRegion] = useState(null);
+  const [narratives, setNarratives] = useState({});
+  const [activeEra, setActiveEra] = useState(ERAS[0].yearKey);
+  const sectionRefs = useRef({});
 
-  function handleEraChange(era) {
-    setSelectedEra(era);
-    setSelectedRegion(null);
-  }
+  // Fetch all narratives on mount
+  useEffect(() => {
+    Promise.all(
+      ERAS.map((era) =>
+        fetch(`/api/narratives/${era.yearKey}`)
+          .then((r) => (r.ok ? r.json() : {}))
+          .then((data) => [era.yearKey, data])
+      )
+    ).then((results) => {
+      const map = {};
+      for (const [key, data] of results) map[key] = data;
+      setNarratives(map);
+    });
+  }, []);
+
+  // Track active section on scroll
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+            setActiveEra(entry.target.dataset.era);
+          }
+        }
+      },
+      { threshold: [0.3, 0.6] }
+    );
+
+    for (const ref of Object.values(sectionRefs.current)) {
+      if (ref) observer.observe(ref);
+    }
+    return () => observer.disconnect();
+  }, [narratives]);
+
+  const scrollToEra = useCallback((yearKey) => {
+    const el = sectionRefs.current[yearKey];
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
 
   const handleSearchSelect = useCallback((result) => {
-    const era = ERAS.find((e) => e.yearKey === result.yearKey);
-    if (era) {
-      setSelectedEra(era);
-      // Create a minimal feature object so InfoPanel can fetch the narrative
-      setSelectedRegion({
-        properties: {
-          region_id: result.regionId,
-          name: result.name,
-          culture_group: result.culture,
-          color: result.color,
-        },
-      });
-    }
-  }, []);
+    scrollToEra(result.yearKey);
+  }, [scrollToEra]);
 
   return (
     <div className="app-shell">
-      <Search onSelect={handleSearchSelect} />
-      <header className="app-title">
-        <div className="app-title-left">
-          <span className="app-title-logo">HISTOMAP</span>
-          <div className="app-title-divider" />
-          <span className="app-title-tagline">A journey through the ages</span>
+      <header className="app-header">
+        <div className="header-left">
+          <span className="header-logo">HISTOMAP</span>
+          <div className="header-divider" />
+          <span className="header-tagline">A journey through the ages</span>
         </div>
-        <div className="app-title-right">
-          <span className="app-title-credit">by Henry Zhu Yufan</span>
+        <div className="header-right">
+          <span className="header-credit">by Henry Zhu Yufan</span>
         </div>
       </header>
-      <Map
-        era={selectedEra}
-        onRegionClick={setSelectedRegion}
-        selectedRegion={selectedRegion}
-      />
-      <Timeline
-        eras={ERAS}
-        selectedEra={selectedEra}
-        onEraChange={handleEraChange}
-      />
-      {selectedRegion && (
-        <InfoPanel
-          region={selectedRegion}
-          era={selectedEra}
-          onClose={() => setSelectedRegion(null)}
-        />
-      )}
+
+      <Search onSelect={handleSearchSelect} />
+      <SideNav eras={ERAS} activeEra={activeEra} onNavigate={scrollToEra} />
+
+      <main className="scroll-container">
+        {ERAS.map((era, i) => (
+          <EraSection
+            key={era.yearKey}
+            era={era}
+            index={i}
+            narratives={narratives[era.yearKey] || {}}
+            ref={(el) => (sectionRefs.current[era.yearKey] = el)}
+          />
+        ))}
+        <footer className="app-footer">
+          <p>HISTOMAP — An interactive journey through history</p>
+          <p className="footer-credit">Created by Henry Zhu Yufan · Data from historical-basemaps</p>
+        </footer>
+      </main>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 *,
 *::before,
@@ -8,82 +8,103 @@
   padding: 0;
 }
 
-html,
-body,
-#root {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #c0ced8;
-  color: #2c2418;
+html {
+  scroll-behavior: smooth;
+}
+
+body, #root {
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #1a1610;
+  color: #e8dcc8;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .app-shell {
   position: relative;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
 }
 
-/* Title bar */
-.app-title {
+/* Header */
+.app-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 48px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  z-index: 800;
-  background: linear-gradient(to bottom, rgba(42, 34, 22, 0.75), rgba(42, 34, 22, 0.3), transparent);
-  backdrop-filter: blur(6px);
-  pointer-events: none;
+  padding: 0 28px;
+  z-index: 900;
+  background: linear-gradient(to bottom, rgba(20, 16, 10, 0.95), rgba(20, 16, 10, 0.7), transparent);
+  backdrop-filter: blur(8px);
 }
 
-.app-title-left {
+.header-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
-.app-title-logo {
+.header-logo {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
-  font-size: 18px;
+  font-size: 20px;
   color: #f4ead5;
-  letter-spacing: 0.06em;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.08em;
 }
 
-.app-title-divider {
+.header-divider {
   width: 1px;
-  height: 18px;
-  background: rgba(244, 234, 213, 0.25);
+  height: 20px;
+  background: rgba(244, 234, 213, 0.2);
 }
 
-.app-title-tagline {
+.header-tagline {
   font-family: 'Crimson Text', serif;
   font-style: italic;
-  font-size: 13px;
-  color: rgba(244, 234, 213, 0.6);
-  letter-spacing: 0.02em;
+  font-size: 14px;
+  color: rgba(244, 234, 213, 0.5);
 }
 
-.app-title-right {
+.header-right {
   display: flex;
   align-items: center;
 }
 
-.app-title-credit {
+.header-credit {
   font-family: 'Playfair Display', serif;
   font-size: 14px;
   font-weight: 700;
-  color: rgba(244, 234, 213, 0.75);
-  letter-spacing: 0.04em;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  color: rgba(244, 234, 213, 0.65);
+}
+
+/* Scroll container */
+.scroll-container {
+  padding-top: 0;
+}
+
+/* Footer */
+.app-footer {
+  text-align: center;
+  padding: 60px 20px;
+  color: rgba(244, 234, 213, 0.25);
+  font-family: 'Crimson Text', serif;
+  font-size: 14px;
+  border-top: 1px solid rgba(244, 234, 213, 0.06);
+}
+
+.footer-credit {
+  margin-top: 8px;
+  font-size: 12px;
+  color: rgba(244, 234, 213, 0.15);
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0 16px;
+    height: 48px;
+  }
+  .header-tagline { display: none; }
+  .header-logo { font-size: 16px; }
 }

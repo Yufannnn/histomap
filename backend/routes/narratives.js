@@ -11,6 +11,21 @@ const YEAR_TO_KEY = {
   '1945': '1945',
 };
 
+// GET /api/narratives/:year — all narratives for an era
+router.get('/:year', (req, res) => {
+  if (req.params.year.includes('/')) return; // skip, let next route handle
+  const yearKey = YEAR_TO_KEY[req.params.year];
+  if (!yearKey) {
+    return res.status(404).json({ error: 'Era not found', year: req.params.year });
+  }
+  const eraData = req.app.locals.narrativesCache[yearKey];
+  if (!eraData) {
+    return res.status(404).json({ error: 'Narrative data not available', year: req.params.year });
+  }
+  res.json(eraData);
+});
+
+// GET /api/narratives/:year/:regionId — single narrative
 router.get('/:year/:regionId', (req, res) => {
   const yearKey = YEAR_TO_KEY[req.params.year];
   if (!yearKey) {
