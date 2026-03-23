@@ -23,5 +23,4 @@ services:
       - type: rewrite
         source: /api/*
         destination: https://histomap-api.onrender.com/api/*
-    plan: free
     autoDeploy: true
