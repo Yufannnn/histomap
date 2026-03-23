@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f4ead5;
+  color: #2c2418;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-shell {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Title bar */
+.app-title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 800;
+  background: linear-gradient(to bottom, rgba(42, 34, 22, 0.75), rgba(42, 34, 22, 0.3), transparent);
+  backdrop-filter: blur(6px);
+  pointer-events: none;
+}
+
+.app-title-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-title-logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 18px;
+  color: #f4ead5;
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.app-title-divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(244, 234, 213, 0.25);
+}
+
+.app-title-tagline {
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(244, 234, 213, 0.6);
+  letter-spacing: 0.02em;
+}

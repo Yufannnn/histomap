@@ -1,0 +1,194 @@
+.timeline-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(32, 26, 18, 0.97) 0%, rgba(32, 26, 18, 0.93) 60%, rgba(32, 26, 18, 0.7) 85%, transparent 100%);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 14px;
+}
+
+.timeline-inner {
+  width: 100%;
+  max-width: 860px;
+  padding: 0 32px;
+}
+
+.timeline-track {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 10px;
+}
+
+/* Base line */
+.timeline-line {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: rgba(244, 234, 213, 0.2);
+  border-radius: 1px;
+}
+
+/* Filled progress */
+.timeline-progress {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, #a83232, #c45a2e);
+  border-radius: 1px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px rgba(168, 50, 50, 0.4);
+}
+
+/* Moving glow */
+.timeline-glow {
+  position: absolute;
+  top: 12px;
+  width: 50px;
+  height: 18px;
+  background: radial-gradient(ellipse, rgba(168, 50, 50, 0.45) 0%, transparent 70%);
+  filter: blur(8px);
+  transform: translateX(-50%);
+  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+/* Era dot button */
+.era-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  flex: 1;
+}
+
+.dot-marker {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dot-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(244, 234, 213, 0.3);
+  transition: all 0.35s ease;
+}
+
+.dot-center {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(244, 234, 213, 0.4);
+  transition: all 0.35s ease;
+}
+
+/* Past dots */
+.era-dot.past .dot-ring {
+  border-color: rgba(168, 50, 50, 0.4);
+}
+
+.era-dot.past .dot-center {
+  background: rgba(168, 50, 50, 0.5);
+}
+
+/* Hover */
+.era-dot:hover .dot-ring {
+  border-color: rgba(244, 234, 213, 0.5);
+  transform: scale(1.4);
+}
+
+.era-dot:hover .dot-center {
+  background: rgba(244, 234, 213, 0.6);
+}
+
+/* Active */
+.era-dot.active .dot-ring {
+  border-color: #a83232;
+  transform: scale(1.7);
+  border-width: 2px;
+  box-shadow: 0 0 14px rgba(168, 50, 50, 0.5), 0 0 28px rgba(168, 50, 50, 0.2);
+}
+
+.era-dot.active .dot-center {
+  background: #a83232;
+  width: 6px;
+  height: 6px;
+  box-shadow: 0 0 10px rgba(168, 50, 50, 0.7);
+}
+
+/* Year label */
+.dot-year {
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(244, 234, 213, 0.65);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  font-family: 'Playfair Display', serif;
+}
+
+.era-dot:hover .dot-year {
+  color: #f4ead5;
+}
+
+.era-dot.active .dot-year {
+  color: #fff;
+  font-size: 17px;
+}
+
+/* Subtitle */
+.dot-subtitle {
+  font-size: 11px;
+  color: rgba(244, 234, 213, 0.4);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  transition: color 0.3s ease;
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+}
+
+.era-dot:hover .dot-subtitle {
+  color: rgba(244, 234, 213, 0.7);
+}
+
+.era-dot.active .dot-subtitle {
+  color: rgba(220, 160, 130, 0.9);
+  font-size: 12px;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .timeline-bar {
+    height: 80px;
+    padding-bottom: 10px;
+  }
+
+  .timeline-inner { padding: 0 16px; }
+  .dot-subtitle { display: none; }
+  .dot-year { font-size: 10px; }
+  .era-dot.active .dot-year { font-size: 11px; }
+}

@@ -1,0 +1,114 @@
+{
+  "ottoman_empire": {
+    "region_id": "ottoman_empire",
+    "name": "Ottoman Empire",
+    "year": 1500,
+    "summary": "In 1453 AD, Ottoman Sultan Mehmed II achieved something that had been attempted and failed for over a thousand years: the conquest of Constantinople. The fall of the last Roman capital sent shockwaves across Christendom and ended the Byzantine Empire after 1,100 years. By 1500, the Ottomans control the Balkans, Anatolia, and are expanding into the Middle East and North Africa.\n\nUnder Sultan Bayezid II, the Ottoman Empire is consolidating its enormous gains. The empire is a sophisticated multi-ethnic, multi-religious state where Christians, Jews, and Muslims live under Ottoman rule. The devshirme system \u2014 recruiting Christian boys to be trained as elite Janissary soldiers and administrators \u2014 creates one of the most effective military-administrative machines of the era.",
+    "population_estimate": "~10\u201312 million",
+    "ruler": "Sultan Bayezid II (r. 1481\u20131512 AD)",
+    "capital": "Constantinople (renamed Istanbul)",
+    "key_events": [
+      "Fall of Constantinople (1453) ends the Byzantine Empire",
+      "Ottomans control the Silk Road and trade routes to Asia",
+      "Janissary corps \u2014 professional soldiers of unmatched discipline",
+      "Jewish refugees expelled from Spain (1492) welcomed into Ottoman territories"
+    ],
+    "did_you_know": "When Spain expelled its Jewish population in 1492, the same year Columbus sailed, Sultan Bayezid II actively welcomed the refugees, reportedly saying that Ferdinand of Spain was 'impoverishing his own country to enrich mine.' Ottoman Jewry flourished for centuries as a result."
+  },
+  "ming_chinese_empire": {
+    "region_id": "ming_chinese_empire",
+    "name": "Ming Dynasty",
+    "year": 1500,
+    "summary": "The Ming Dynasty governs China from the Forbidden City in Beijing, the greatest palace complex ever built \u2014 over 9,000 rooms behind walls painted blood red. Founded after overthrowing the Mongol Yuan dynasty in 1368, the Ming represent a restoration of Han Chinese rule and Confucian values.\n\nJust decades earlier, Admiral Zheng He commanded the largest wooden ships ever built in history \u2014 treasure fleets of over 300 vessels reaching East Africa. But in 1433, China made a fateful decision: the voyages were cancelled, the ships burned, and maritime trade was restricted. As the Portuguese were beginning their exploration of Africa, China was turning inward \u2014 a decision that would have enormous consequences for the next five centuries.",
+    "population_estimate": "~60\u201380 million",
+    "ruler": "Hongzhi Emperor (r. 1487\u20131505 AD)",
+    "capital": "Beijing",
+    "key_events": [
+      "Forbidden City completed (1420) \u2014 the world's largest palace complex",
+      "Zheng He's treasure fleets reach East Africa (1405\u20131433), then cancelled",
+      "Great Wall rebuilt and extended in stone \u2014 the version that survives today",
+      "Ming porcelain traded across the world \u2014 'china' becomes synonymous with ceramics"
+    ],
+    "did_you_know": "Zheng He's treasure ships were truly colossal \u2014 the largest were roughly 400 feet long, compared to Columbus's Santa Maria at 85 feet. China had the capability to reach the Americas before Columbus. The decision not to continue exploration is one of history's great what-ifs."
+  },
+  "holy_roman_empire": {
+    "region_id": "holy_roman_empire",
+    "name": "Habsburg Empire",
+    "year": 1500,
+    "summary": "The Habsburg family, through strategic marriages rather than conquest, have assembled the largest realm in Europe by 1500. 'Others may wage war; you, happy Austria, marry!' \u2014 the phrase captures how the Habsburgs expanded their empire. The young Charles of Habsburg will soon inherit Spain (with its new American empire), the Netherlands, and the Holy Roman Empire simultaneously, making him the most powerful ruler in the Western world.\n\nThis is the age when Spain, under Ferdinand and Isabella, has just concluded the Reconquista, expelled Jews and Muslims, and sent Columbus across the Atlantic. The Americas are about to dramatically transform Europe's economy and global power.",
+    "population_estimate": "~8 million in Habsburg territories",
+    "ruler": "Maximilian I (r. 1508\u20131519 AD)",
+    "capital": "Vienna (and later Madrid)",
+    "key_events": [
+      "Columbus reaches the Americas (1492) \u2014 the Habsburg-Spanish connection soon controls this",
+      "Reconquista completed \u2014 Spain expels Moors and Jews (1492)",
+      "Martin Luther will soon post his 95 Theses (1517) \u2014 triggering the Protestant Reformation",
+      "Habsburg marriages create the largest European empire through dynastic union"
+    ],
+    "did_you_know": "At his peak, Charles V (Habsburg) ruled over Spain, the Americas, Austria, the Netherlands, southern Italy, and was Holy Roman Emperor \u2014 an empire on which 'the sun never set' a century before Britain claimed that phrase. He ruled over roughly a quarter of the world's population."
+  },
+  "aztec_empire": {
+    "region_id": "aztec_empire",
+    "name": "Aztec Empire",
+    "year": 1500,
+    "summary": "Tenochtitlan, the Aztec capital built on an island in Lake Texcoco, is one of the largest cities in the world in 1500 \u2014 larger than any contemporary European city. Its population of perhaps 200,000\u2013300,000 people is served by aqueducts, causeways, floating gardens (chinampas), and a sophisticated market system. When Spanish soldiers first saw it in 1519, they compared it to Venice and could hardly believe their eyes.\n\nThe Aztec Triple Alliance controls central Mexico through a tributary empire, demanding goods and sacrificial victims from subjugated peoples. Human sacrifice on a massive scale \u2014 dedicated to keeping the sun rising \u2014 makes the Aztecs feared and hated by their neighbors, who will prove decisive allies to the Spanish conquistadors.",
+    "population_estimate": "~5\u20136 million in the Aztec empire",
+    "ruler": "Moctezuma II (r. 1502\u20131520 AD)",
+    "capital": "Tenochtitlan",
+    "key_events": [
+      "Tenochtitlan \u2014 one of the world's largest cities, built on a lake island",
+      "Aztec Triple Alliance controls central Mexico through tribute and military power",
+      "Massive pyramid temples and ritual human sacrifice at the heart of Aztec religion",
+      "Hern\u00e1n Cort\u00e9s will arrive in 1519 \u2014 the empire will fall by 1521"
+    ],
+    "did_you_know": "The Aztec 'Flower Wars' were ritualized conflicts fought specifically to capture, not kill, enemy warriors for sacrifice. It was an elegant military-religious system \u2014 until they faced Spanish soldiers who had no interest in capturing anyone and were immune to the psychological impact of expected sacrifice."
+  },
+  "inca_empire": {
+    "region_id": "inca_empire",
+    "name": "Inca Empire",
+    "year": 1500,
+    "summary": "The Inca Empire \u2014 Tawantinsuyu, 'the four regions' \u2014 is the largest empire in pre-Columbian America, stretching 4,300 kilometers along the Pacific coast of South America. Without a written language or the wheel, the Incas managed an empire of perhaps 10 million people through an extraordinary administrative system based on knotted strings (quipus), a road network rivaling Rome's, and mit'a (labor tribute) from subject peoples.\n\nAt its center is the 'navel of the world' \u2014 Cusco, at 3,400 meters altitude, connected to the empire by stone roads and relay runners who could carry messages 240 kilometers a day. The Inca state controlled food storage in thousands of storehouses, redistributing resources to prevent famine. Francisco Pizarro and 168 soldiers will shatter this civilization in 1532.",
+    "population_estimate": "~10\u201312 million",
+    "ruler": "Huayna Capac (r. 1493\u20131527 AD)",
+    "capital": "Cusco",
+    "key_events": [
+      "Inca road system \u2014 40,000 km of roads through extreme Andean terrain",
+      "Machu Picchu built \u2014 though abandoned before the Spanish arrival",
+      "Quipu system \u2014 knotted strings used for record-keeping without writing",
+      "Mit'a labor system redistributes work and goods across the empire"
+    ],
+    "did_you_know": "The Inca Empire was the largest empire in the pre-Columbian Americas \u2014 larger than the Roman Empire at its peak in absolute land area. And it was conquered by 168 Spanish soldiers, 62 horsemen, and a devastating epidemic of smallpox that had swept ahead of the Spanish, killing the Inca emperor Huayna Capac before Pizarro even arrived."
+  },
+  "songhai": {
+    "region_id": "songhai",
+    "name": "Songhai Empire",
+    "year": 1500,
+    "summary": "The Songhai Empire is the largest empire in African history at this period, controlling the gold and salt trade routes that were the economic arteries of West Africa. The city of Timbuktu \u2014 now synonymous with 'the ends of the earth' \u2014 is in 1500 a flourishing center of Islamic scholarship, with the Sankore Madrasah housing tens of thousands of manuscripts and thousands of students.\n\nAskia Muhammad, who seizes power in 1493, rules with a sophistication that impresses even the Muslim scholars and travelers who visit. He standardizes weights and measures, promotes Islamic law, and maintains diplomatic relations with the Ottoman Empire and North African states.",
+    "population_estimate": "~7\u20138 million",
+    "ruler": "Askia Muhammad I (r. 1493\u20131528 AD)",
+    "capital": "Gao",
+    "key_events": [
+      "Timbuktu \u2014 major center of Islamic learning with hundreds of thousands of manuscripts",
+      "Gold and salt trade makes Songhai enormously wealthy",
+      "Askia Muhammad standardizes weights, measures, and law across the empire",
+      "Songhai will be destroyed by Moroccan invasion in 1591"
+    ],
+    "did_you_know": "The libraries of Timbuktu hold 700,000\u20131,000,000 manuscripts on mathematics, astronomy, medicine, and philosophy. Many were hidden from French colonial authorities in the 19th and 20th centuries and are only now being digitized. Sub-Saharan Africa had a rich written tradition that colonial-era historians largely ignored."
+  },
+  "mughal_empire": {
+    "region_id": "mughal_empire",
+    "name": "Mughal Empire",
+    "year": 1500,
+    "summary": "In 1500, the Mughal Empire does not yet exist \u2014 but its founder Babur is already at work. The Timurid prince from Central Asia, descended from both Genghis Khan and Tamerlane, is fighting to hold Kabul while watching for his opportunity to invade India. In 1526, at the First Battle of Panipat, Babur's use of artillery and flanking cavalry will defeat the Delhi Sultanate and begin one of history's greatest empires.\n\nThe Indian subcontinent in 1500 is a patchwork of sultanates, Hindu kingdoms, and regional powers. The Delhi Sultanate, weakened by Tamerlane's devastating raid in 1398, no longer controls much of northern India. The stage is set for Mughal transformation.",
+    "population_estimate": "~100 million on Indian subcontinent",
+    "ruler": "Ibrahim Lodi (Delhi Sultanate, r. 1517\u20131526 AD) \u2014 soon to be overthrown",
+    "capital": "Agra (future Mughal capital)",
+    "key_events": [
+      "Babur prepares to invade India from Kabul",
+      "First Battle of Panipat (1526) \u2014 Mughal Empire begins",
+      "Portuguese establish coastal trading posts in India (1498 onward)",
+      "Indian Ocean trade routes being disrupted by Portuguese naval power"
+    ],
+    "did_you_know": "The Taj Mahal, the most iconic Mughal monument, was built 1632\u20131653 by Emperor Shah Jahan as a tomb for his wife Mumtaz Mahal. It required 22 years, 20,000 workers, and materials from across Asia. It sits on a subcontinent that accounts for roughly 25% of global GDP today \u2014 a proportion it also held during the height of the Mughal era."
+  }
+}

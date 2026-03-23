@@ -1,0 +1,114 @@
+{
+  "united_states": {
+    "region_id": "united_states",
+    "name": "United States",
+    "year": 1945,
+    "summary": "In 1945, the United States emerges from World War II as the undisputed dominant power of the Western world \u2014 and arguably the world. Its industrial base is intact (unlike every major European and Asian combatant), its economy has been supercharged by wartime production, and it alone possesses the atomic bomb. The United States in 1945 produces roughly 50% of world GDP.\n\nThe GI generation returns home to the suburbs, the baby boom, and unprecedented prosperity. The Marshall Plan will rebuild Europe, the United Nations (based in New York) attempts a new world order, and the Cold War with the Soviet Union is already beginning. America's global role \u2014 superpower, world's policeman, defender of liberal democracy \u2014 is being born in this moment.",
+    "population_estimate": "~140 million",
+    "ruler": "Harry S. Truman (r. 1945\u20131953); FDR died April 12, 1945",
+    "capital": "Washington D.C.",
+    "key_events": [
+      "FDR dies (April 12, 1945); Truman orders atomic bombs dropped on Japan",
+      "V-E Day (May 8) and V-J Day (September 2) end the war",
+      "US produces roughly 50% of world GDP in 1945",
+      "United Nations Charter signed (June 1945) in San Francisco"
+    ],
+    "did_you_know": "The United States in 1945 had the world's only operational atomic weapons, the largest navy ever assembled, and produced half the world's economic output. No single nation had dominated the world to this degree since Rome \u2014 and America's dominance was arguably greater, given the global scale of 20th-century civilization."
+  },
+  "soviet_union": {
+    "region_id": "soviet_union",
+    "name": "Soviet Union",
+    "year": 1945,
+    "summary": "The Soviet Union has won the war against Nazi Germany at almost unimaginable cost. Between 26 and 27 million Soviet citizens are dead \u2014 soldiers and civilians alike \u2014 a loss so staggering it exceeds the total population of many European countries. Every family has lost someone. The Western Front was decisive, but the Eastern Front, where Germany and the USSR fought the largest land battles in history, was the war's true killing ground.\n\nStalin emerges from the war as one of history's most powerful individuals, controlling an empire from Berlin to Vladivostok. Soviet armies occupy Eastern Europe and will impose communist governments across it. The Cold War \u2014 already beginning even as victory celebrations continue \u2014 will define global politics for the next 45 years.",
+    "population_estimate": "~170 million (after ~27 million war deaths)",
+    "ruler": "Joseph Stalin (r. 1924\u20131953)",
+    "capital": "Moscow",
+    "key_events": [
+      "~27 million Soviet war deaths \u2014 the highest toll of any WWII combatant",
+      "Soviet armies occupy Eastern Europe \u2014 Iron Curtain descends",
+      "Soviet atomic bomb program begins \u2014 nuclear parity achieved in 1949",
+      "Stalin's Eastern European empire replaces Nazi occupation with Soviet occupation"
+    ],
+    "did_you_know": "The Soviet Union's war losses are almost incomprehensible: 27 million dead represents approximately 14% of its pre-war population. The United States, by comparison, lost 418,000 \u2014 terrible, but proportionally 65 times less. This disparity fundamentally shaped each country's understanding of the war and their postwar priorities."
+  },
+  "united_kingdom": {
+    "region_id": "united_kingdom",
+    "name": "United Kingdom",
+    "year": 1945,
+    "summary": "Britain has won the war \u2014 Churchill's 'finest hour' is real \u2014 but victory has come at enormous cost. Britain is effectively bankrupt, having spent its imperial reserves to finance six years of total war. The United States has replaced Britain as the world's dominant power. The British Empire, which Churchill was determined to preserve, is already beginning its rapid dissolution.\n\nIn a stunning electoral upset, Churchill is voted out of office in July 1945 \u2014 while the war in the Pacific is still ongoing \u2014 replaced by Clement Attlee's Labour government. The British public, victorious but exhausted, chooses domestic reconstruction over imperial glory. The welfare state \u2014 the National Health Service, social housing, nationalized industries \u2014 is about to be built.",
+    "population_estimate": "~49 million in Britain; ~500 million across the empire",
+    "ruler": "Churchill until July 1945; then Clement Attlee",
+    "capital": "London",
+    "key_events": [
+      "Britain wins WWII but emerges bankrupt and dependent on US loans",
+      "Churchill voted out \u2014 Labour wins in landslide (July 1945)",
+      "National Health Service established (1948) \u2014 legacy of wartime sacrifice",
+      "Indian independence begins (1947) \u2014 the empire's accelerating dissolution"
+    ],
+    "did_you_know": "Churchill was voted out of office on July 26, 1945, while attending the Potsdam Conference \u2014 he had to fly home mid-conference after learning the results. He was replaced by Attlee, who then returned to Potsdam. Stalin reportedly couldn't believe a wartime leader of such stature could be removed by an election."
+  },
+  "china": {
+    "region_id": "china",
+    "name": "Republic of China",
+    "year": 1945,
+    "summary": "China has endured the most devastating foreign invasion in its history \u2014 Japan's occupation from 1937\u20131945 killed between 15\u201320 million Chinese and devastated the country's economy and infrastructure. The Nationalist government of Chiang Kai-shek, operating from the wartime capital Chongqing, survived through determined resistance and Allied support.\n\nVictory over Japan brings not peace but the resumption of civil war between Chiang's Nationalists and Mao Zedong's Communists. The Communists emerge stronger \u2014 having fought an effective guerrilla war in rural areas \u2014 while the Nationalists are exhausted and corrupt. By 1949, Mao will proclaim the People's Republic of China, and Chiang will retreat to Taiwan.",
+    "population_estimate": "~450 million",
+    "ruler": "Chiang Kai-shek (Generalissimo)",
+    "capital": "Chongqing (wartime); moving back to Nanjing",
+    "key_events": [
+      "Japan surrenders September 2, 1945 \u2014 China's 8-year war ends",
+      "15\u201320 million Chinese war dead, including the Nanjing Massacre (300,000 killed in 1937)",
+      "Civil war with Communists immediately resumes after Japanese defeat",
+      "Mao's Communists will win \u2014 Chiang retreats to Taiwan in 1949"
+    ],
+    "did_you_know": "The Rape of Nanjing (December 1937 \u2013 January 1938) saw Japanese forces massacre an estimated 200,000\u2013300,000 Chinese civilians and prisoners of war over six weeks. It remains a source of deep historical grievance between China and Japan and is still politically contentious today."
+  },
+  "france": {
+    "region_id": "france",
+    "name": "France (Liberated)",
+    "year": 1945,
+    "summary": "France has endured a traumatic four years of German occupation \u2014 collaboration with the Vichy regime, the deportation of 75,000 Jewish French citizens to Nazi death camps, and the moral ambiguity that came with living under Nazi rule. Liberation in 1944, led by the Free French forces under de Gaulle alongside Allied armies, has restored French sovereignty and national pride.\n\nCharles de Gaulle's genius was to insist \u2014 against all evidence \u2014 that France was not a defeated nation but a great power that had been temporarily subdued. By insisting on this narrative, France secured a permanent seat on the UN Security Council and a zone of occupation in Germany. The myth of French resistance obscured the reality of widespread collaboration, a reckoning France would struggle with for decades.",
+    "population_estimate": "~40 million",
+    "ruler": "General Charles de Gaulle (provisional government)",
+    "capital": "Paris",
+    "key_events": [
+      "Liberation of Paris (August 1944) \u2014 de Gaulle marches down the Champs-\u00c9lys\u00e9es",
+      "75,000 French Jews deported to Nazi death camps with Vichy cooperation",
+      "France gets a permanent UN Security Council seat \u2014 de Gaulle's diplomatic triumph",
+      "French Fourth Republic established \u2014 beginning decades of political instability"
+    ],
+    "did_you_know": "France is one of five permanent members of the UN Security Council \u2014 alongside the US, Soviet Union/Russia, UK, and China. France's inclusion was largely due to de Gaulle's insistence on France's great-power status and Churchill's support, despite the fact that France had been occupied and its government had collaborated with the Nazis."
+  },
+  "germany_usa": {
+    "region_id": "germany_usa",
+    "name": "Germany (Occupied)",
+    "year": 1945,
+    "summary": "Germany in May 1945 is a nation of rubble. Allied bombing has devastated every major city; the final Soviet assault on Berlin killed 80,000 Soviet soldiers and an estimated 100,000\u2013125,000 German civilians. Hitler commits suicide on April 30; the unconditional surrender follows on May 8 (V-E Day). The Nazi state has ceased to exist.\n\nGermany is divided into four occupation zones controlled by the US, Soviet Union, Britain, and France. Berlin, deep within the Soviet zone, is similarly divided. This arrangement \u2014 intended as temporary \u2014 will harden into two separate German states: West Germany (Federal Republic) and East Germany (German Democratic Republic), separated by the Iron Curtain for 45 years.",
+    "population_estimate": "~66 million (including expelled Germans from Eastern Europe)",
+    "ruler": "Allied Control Council (US, UK, USSR, France)",
+    "capital": "Berlin (divided into four sectors)",
+    "key_events": [
+      "Hitler's suicide (April 30, 1945); Germany surrenders (May 8, V-E Day)",
+      "Nuremberg Trials \u2014 first international tribunal for war crimes",
+      "Germany divided into four Allied occupation zones",
+      "12 million ethnic Germans expelled from Eastern Europe in largest peacetime population transfer"
+    ],
+    "did_you_know": "The Nuremberg Trials (1945\u201346) established the legal precedent that 'following orders' is not a defense for war crimes and crimes against humanity \u2014 a principle now embedded in international law and the Geneva Conventions. The concept of 'crimes against humanity' as a legal category was invented at Nuremberg."
+  },
+  "japan_usa": {
+    "region_id": "japan_usa",
+    "name": "Japan (Occupied)",
+    "year": 1945,
+    "summary": "Imperial Japan's surrender on September 2, 1945 \u2014 following atomic bombings of Hiroshima (August 6) and Nagasaki (August 9) that together killed 110,000\u2013210,000 people \u2014 ends World War II. Japan is the first and only nation ever subjected to nuclear attack.\n\nGeneral Douglas MacArthur presides over the American occupation, which transforms Japan with remarkable speed. A new pacifist constitution is imposed, the emperor retains symbolic status but renounces divinity, war crimes trials (Tokyo Trials) are held, and land reform redistributes property. Japan's postwar economic miracle \u2014 rising from utter devastation to the world's second largest economy by 1968 \u2014 is one of history's most extraordinary recoveries.",
+    "population_estimate": "~72 million",
+    "ruler": "Emperor Hirohito (symbolic); General Douglas MacArthur (Supreme Commander)",
+    "capital": "Tokyo",
+    "key_events": [
+      "Hiroshima (Aug 6) and Nagasaki (Aug 9) \u2014 first use of atomic weapons in war",
+      "Japan surrenders September 2, 1945 \u2014 end of WWII",
+      "MacArthur's occupation transforms Japan: new constitution, land reform, war crimes trials",
+      "Emperor Hirohito renounces divinity in 'New Year's Jewel Voice' radio broadcast"
+    ],
+    "did_you_know": "Emperor Hirohito's surrender broadcast on August 15, 1945 was the first time most Japanese had ever heard their emperor's voice \u2014 he had been considered literally divine. He announced defeat in such archaic, formal Japanese that many listeners couldn't understand the words, only that something extraordinary had happened."
+  }
+}

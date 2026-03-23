@@ -1,0 +1,114 @@
+{
+  "song_empire": {
+    "region_id": "song_empire",
+    "name": "Song Dynasty",
+    "year": 1000,
+    "summary": "The Song Dynasty governs the most technologically advanced civilization on Earth in the year 1000 AD. Chinese inventors have already produced gunpowder, woodblock printing, and paper money \u2014 innovations that will eventually transform the entire world. The Song capital Kaifeng is possibly the largest city on earth, a bustling metropolis of over a million people with restaurants, entertainment quarters, and a literate merchant class.\n\nThe Song era sees the rise of Neo-Confucianism as a philosophical synthesis, the flowering of landscape painting and poetry as high arts, and the expansion of a sophisticated examination-based civil service. Yet the Song face constant pressure from northern neighbors \u2014 the Liao dynasty of the Khitan, and later the Jin dynasty of the Jurchen \u2014 ultimately losing northern China by 1127 AD.",
+    "population_estimate": "~60 million in Song China",
+    "ruler": "Emperor Zhenzong (r. 998\u20131022 AD)",
+    "capital": "Kaifeng",
+    "key_events": [
+      "Kaifeng is possibly the world's largest city \u2014 over 1 million inhabitants",
+      "Gunpowder weapons, printing, and paper money all in wide use",
+      "Grand Canal expanded \u2014 connecting northern and southern China economically",
+      "Neo-Confucian philosophy reshapes Chinese intellectual life"
+    ],
+    "did_you_know": "The Song Dynasty invented the world's first paper currency \u2014 'jiaozi' \u2014 around 1000 AD. It was backed by iron coins and issued by the government. Paper money wouldn't appear in Europe for another 600 years."
+  },
+  "abbasid_caliphate": {
+    "region_id": "abbasid_caliphate",
+    "name": "Abbasid Caliphate",
+    "year": 1000,
+    "summary": "Baghdad, founded in 762 AD, is the intellectual capital of the medieval world in 1000 AD. The Abbasid Caliphate has sponsored the 'House of Wisdom' (Bayt al-Hikma), an institution that translates Greek, Persian, and Indian texts into Arabic and produces original works in mathematics, astronomy, medicine, and philosophy. The scholars of Baghdad are preserving and extending knowledge that Europe has largely lost.\n\nHowever, the Abbasid Caliphate is in political decline by 1000 AD. Real power lies with the Buyid dynasty of Persian origin who control the caliph as a figurehead. The empire has fractured, with independent sultanates from Spain to Central Asia acknowledging only nominal Abbasid religious authority. The Islamic world is splitting politically even as it flourishes intellectually.",
+    "population_estimate": "~30 million under nominal Abbasid authority",
+    "ruler": "Caliph Al-Qadir (r. 991\u20131031 AD) \u2014 largely a figurehead",
+    "capital": "Baghdad",
+    "key_events": [
+      "House of Wisdom in Baghdad \u2014 translation and creation of world-leading scholarship",
+      "Al-Biruni calculates the Earth's circumference to remarkable accuracy",
+      "Ibn Sina (Avicenna) writes the Canon of Medicine \u2014 used in Europe for 600 years",
+      "Al-Hazen (Ibn al-Haytham) writes the Book of Optics \u2014 founding modern visual science"
+    ],
+    "did_you_know": "The Islamic Golden Age scholars gave us algebra ('al-jabr'), algorithms (from al-Khwarizmi's name), and chemistry ('al-kimiya'). Even the word 'alcohol' comes from Arabic 'al-kuhul.' Islamic scholars bridged ancient Greek knowledge and the European Renaissance."
+  },
+  "holy_roman_empire": {
+    "region_id": "holy_roman_empire",
+    "name": "Holy Roman Empire",
+    "year": 1000,
+    "summary": "Under Emperor Otto III and his successor Henry II, the Holy Roman Empire aspires to revive the glory of Charlemagne's Carolingian Empire. The emperor styles himself ruler of a Christian realm ordained by God \u2014 a claim that will place him in perpetual tension with the Pope over who holds ultimate authority in Christendom.\n\nYear 1000 itself carried enormous religious weight \u2014 many Christians feared the world would end at the millennium. When it did not, a wave of church building, pilgrimage, and religious enthusiasm swept Europe. Romanesque architecture emerges, monasteries spread literacy and learning, and the Crusades are only a century away.",
+    "population_estimate": "~30 million in Europe overall",
+    "ruler": "Emperor Otto III (r. 996\u20131002 AD)",
+    "capital": "Aachen (ceremonial); no fixed capital",
+    "key_events": [
+      "Emperor Otto III promotes the idea of a Christian Roman Empire revived",
+      "Apocalyptic fears around the year 1000 followed by religious revival",
+      "Viking raids diminish as Norsemen settle and convert to Christianity",
+      "Romanesque church architecture spreads across Europe"
+    ],
+    "did_you_know": "The Holy Roman Empire was neither holy, nor Roman, nor an empire \u2014 as Voltaire famously quipped. It was a loose confederation of German princes, bishops, and cities that persisted for over 800 years (962\u20131806), making it one of history's most durable and confusing political structures."
+  },
+  "byzantine_empire": {
+    "region_id": "byzantine_empire",
+    "name": "Byzantine Empire",
+    "year": 1000,
+    "summary": "In 1000 AD, the Byzantine Empire is at its medieval peak under the Macedonian dynasty. Emperor Basil II \u2014 soon to earn the nickname 'Bulgar-Slayer' \u2014 has reconquered significant territory and brought the Bulgarian Empire to its knees. Byzantine culture and Orthodox Christianity are spreading northward into Slavic lands, and the recent conversion of Kievan Rus (988 AD) under Vladimir the Great has created a vast new sphere of Byzantine cultural influence.\n\nConstantinople, with perhaps 400,000\u2013500,000 inhabitants, remains the largest city in the Christian world by far. Byzantine silk workshops, mosaics, and manuscripts represent the highest luxury goods of the medieval world.",
+    "population_estimate": "~12 million",
+    "ruler": "Emperor Basil II 'Bulgar-Slayer' (r. 976\u20131025 AD)",
+    "capital": "Constantinople",
+    "key_events": [
+      "Basil II defeats and blinds 15,000 Bulgarian prisoners \u2014 earning his fearsome nickname",
+      "Conversion of Kievan Rus (988 AD) creates Russia's Orthodox Christian identity",
+      "Byzantine art and theology influence all of Eastern Europe",
+      "Constantinople remains the wealthiest city in Christendom"
+    ],
+    "did_you_know": "Byzantine Greek fire \u2014 a flammable liquid that burned even on water \u2014 was one of antiquity's most closely guarded military secrets. Its exact formula was never written down and remains unknown today. It was a decisive weapon in defending Constantinople for centuries."
+  },
+  "fatimid_caliphate": {
+    "region_id": "fatimid_caliphate",
+    "name": "Fatimid Caliphate",
+    "year": 1000,
+    "summary": "The Fatimid Caliphate, ruling from Cairo, represents the Shia Islamic challenge to the Sunni Abbasid Caliphate of Baghdad. Founded in North Africa, the Fatimids conquered Egypt in 969 AD and founded the city of Cairo (al-Qahira, 'the victorious') as their capital. Al-Azhar University, founded in 970 AD, becomes one of the world's oldest continuously operating universities and the leading institution of Islamic learning.\n\nFatimid Egypt controls the lucrative Red Sea and Mediterranean trade, making Cairo one of the wealthiest cities of the medieval world. Their tolerance of different religious communities \u2014 including large Christian and Jewish populations \u2014 makes Fatimid Egypt unusual in the politically charged religious landscape of this era.",
+    "population_estimate": "~6 million in Egypt and North Africa",
+    "ruler": "Caliph Al-Hakim bi-Amr Allah (r. 996\u20131021 AD)",
+    "capital": "Cairo",
+    "key_events": [
+      "Al-Azhar University founded (970 AD) \u2014 still operating today",
+      "Cairo becomes one of the world's greatest trading cities",
+      "Fatimids control Levant and compete with Byzantines and Abbasids",
+      "Caliph Al-Hakim's erratic rule \u2014 destroys Church of Holy Sepulchre (1009)"
+    ],
+    "did_you_know": "Al-Azhar University in Cairo, founded by the Fatimids in 970 AD, is one of the oldest continuously functioning universities in the world. It is still in operation today and remains a leading center of Islamic scholarship, over 1,050 years after its founding."
+  },
+  "chola_state": {
+    "region_id": "chola_state",
+    "name": "Chola Empire",
+    "year": 1000,
+    "summary": "The Chola Empire of South India reaches its absolute zenith around 1000 AD under Emperor Raja Raja Chola I and his son Rajendra Chola I. From their capital at Thanjavur, Chola armies and fleets extend their power across South India, Sri Lanka, parts of Southeast Asia, and even launched a naval expedition to the Malay Peninsula and Sumatra in 1025 AD.\n\nThis is one of the greatest maritime empires in Asian history, using sea power to project influence across the Indian Ocean. Chola bronze sculpture \u2014 particularly the iconic Nataraja (Dancing Shiva) \u2014 represents one of the highest achievements of world art. The towering Brihadisvara Temple at Thanjavur, completed in 1010 AD, remains one of the greatest architectural achievements of medieval India.",
+    "population_estimate": "~50 million across India",
+    "ruler": "Raja Raja Chola I (r. 985\u20131014 AD)",
+    "capital": "Thanjavur",
+    "key_events": [
+      "Brihadisvara Temple completed (1010 AD) \u2014 architectural masterpiece",
+      "Chola naval expedition to Malay Peninsula and Sumatra (1025 AD)",
+      "Chola bronze casting produces the iconic Nataraja sculptures",
+      "Tamil literature flourishes \u2014 Kamban's Ramayana commissioned"
+    ],
+    "did_you_know": "The Chola Empire's naval expedition of 1025 AD attacked and temporarily captured Srivijaya (modern Sumatra) \u2014 making it one of the few medieval Asian states to project power across thousands of miles of open ocean. This 'medieval globalization' connected South Asia and Southeast Asia in a web of trade and culture."
+  },
+  "toltec_empire": {
+    "region_id": "toltec_empire",
+    "name": "Toltec Empire",
+    "year": 1000,
+    "summary": "In central Mexico, the Toltec civilization flourishes at their capital Tula (Tollan), which Mesoamerican traditions will later remember as a legendary city of wisdom and prosperity. The Toltecs are master artisans and warriors whose cultural influence spreads across Mesoamerica, influencing the Maya of the Yucatan Peninsula and inspiring later peoples including the Aztecs.\n\nToltec iconography \u2014 the feathered serpent Quetzalcoatl, the rain god Tlaloc, the warrior cult \u2014 will permeate Mesoamerican religion and art for centuries after the Toltecs themselves decline. Their collapse around 1150 AD will create the power vacuum that eventually allows the Aztec rise.",
+    "population_estimate": "~5 million in central Mexico",
+    "ruler": "Ce Acatl Topiltzin Quetzalcoatl (legendary/historical king)",
+    "capital": "Tula",
+    "key_events": [
+      "Tula possibly the largest city in Mesoamerica at its peak",
+      "Toltec culture spreads to Chichen Itza in Yucatan",
+      "Quetzalcoatl cult \u2014 the feathered serpent god \u2014 dominates religion",
+      "Obsidian trade network extends across Mesoamerica"
+    ],
+    "did_you_know": "When Spanish conquistadors arrived in Mexico, Aztec nobles claimed descent from the Toltecs and considered Toltec culture the gold standard of civilization. The Aztec word for an skilled artisan was literally 'Toltec' \u2014 the name had become synonymous with craftsmanship and wisdom."
+  }
+}

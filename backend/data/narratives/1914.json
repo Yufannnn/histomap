@@ -1,0 +1,114 @@
+{
+  "united_kingdom_of_great_britain_and_ireland": {
+    "region_id": "united_kingdom_of_great_britain_and_ireland",
+    "name": "British Empire",
+    "year": 1914,
+    "summary": "In 1914, the British Empire is at the absolute apex of its power \u2014 controlling roughly 25% of the Earth's land surface and governing perhaps 400 million people. The Royal Navy rules every ocean. British industry, banking, and commerce dominate the world economy. London is the financial capital of the world, and the pound sterling is the global reserve currency.\n\nYet Britain is anxious. Germany's rapid industrialization and naval buildup directly challenge British supremacy. The assassination of Archduke Franz Ferdinand in Sarajevo on June 28, 1914 sets off a chain of treaty obligations that will pull every major power into the most devastating war in human history to that point \u2014 a war that will end the British Empire's unchallenged supremacy, though the empire itself will survive for another three decades.",
+    "population_estimate": "~400 million across the empire",
+    "ruler": "King George V (r. 1910\u20131936); Prime Minister H.H. Asquith",
+    "capital": "London",
+    "key_events": [
+      "Britain governs 25% of the Earth's land \u2014 the largest empire in history",
+      "Royal Navy outbuilds Germany in the 'Dreadnought race'",
+      "Assassination of Franz Ferdinand (June 28) triggers World War I",
+      "Britain declares war on Germany (August 4, 1914)"
+    ],
+    "did_you_know": "The British Empire was so vast that it coined the phrase 'the sun never sets on the British Empire' \u2014 because at any moment, some part of the empire was in daylight. Managing time zones across this empire was one factor that led to the establishment of Greenwich Mean Time as the global standard."
+  },
+  "german_empire": {
+    "region_id": "german_empire",
+    "name": "German Empire",
+    "year": 1914,
+    "summary": "Unified only in 1871 under Prussian leadership, Germany has in four decades become Europe's most powerful industrial and military nation. German steel production exceeds Britain's; German universities lead the world in science and engineering; the German army is the finest professional fighting force in Europe. But Germany feels encircled \u2014 by France to the west, Russia to the east, and Britain's naval supremacy cutting off German access to global trade.\n\nKaiser Wilhelm II's ambitions for German 'Weltpolitik' (world policy) have alarmed every major power. The assassination of Franz Ferdinand provides the spark. Germany's Schlieffen Plan calls for defeating France in six weeks, then turning east to face Russia \u2014 a plan that will fail catastrophically, leading to four years of unimaginable slaughter.",
+    "population_estimate": "~67 million",
+    "ruler": "Kaiser Wilhelm II (r. 1888\u20131918)",
+    "capital": "Berlin",
+    "key_events": [
+      "Germany's industrial output now rivals Britain \u2014 the dominant European power",
+      "Blank check to Austria-Hungary escalates the July Crisis",
+      "Schlieffen Plan \u2014 invade France through Belgium, triggering British entry",
+      "U-boat warfare will eventually draw the United States into the war"
+    ],
+    "did_you_know": "Kaiser Wilhelm II was Queen Victoria's grandson \u2014 he was a first cousin of both King George V of Britain and Tsar Nicholas II of Russia. The First World War was in part a family quarrel at the dynastic level, even as millions of ordinary men died in the trenches."
+  },
+  "russian_empire": {
+    "region_id": "russian_empire",
+    "name": "Russian Empire",
+    "year": 1914,
+    "summary": "The Russian Empire in 1914 is enormous but dangerously fragile. Tsar Nicholas II rules over 170 million people across 11 time zones, but his autocratic system is creaking under the strain of modernity. The 1905 Revolution, triggered by the catastrophic defeat to Japan, forced a constitutional parliament (Duma) on the Tsar, but real power remains autocratic and unresponsive.\n\nRussia mobilizes in defense of Serbia, its Slavic ally, triggering German war plans. The Russian army is vast but poorly equipped and supplied. Defeats at Tannenberg and the Masurian Lakes will be catastrophic. By 1917, military collapse, food shortages, and revolutionary pressure will end three centuries of Romanov rule.",
+    "population_estimate": "~170 million",
+    "ruler": "Tsar Nicholas II (r. 1894\u20131917)",
+    "capital": "Saint Petersburg (renamed Petrograd 1914)",
+    "key_events": [
+      "Russia mobilizes for Serbia \u2014 triggering German declaration of war",
+      "Defeat at Tannenberg (1914) destroys an entire Russian army",
+      "Rasputin's influence over the royal family scandalizes Russia",
+      "Russian Revolution (1917) will end the Romanov dynasty"
+    ],
+    "did_you_know": "Russia's defeat to Japan in 1904\u20131905 was the first time an Asian nation had defeated a European great power in modern warfare. It shocked the world, triggered the 1905 Russian Revolution, and inspired independence movements across Asia and Africa."
+  },
+  "ottoman_empire": {
+    "region_id": "ottoman_empire",
+    "name": "Ottoman Empire",
+    "year": 1914,
+    "summary": "By 1914 the Ottoman Empire has lost most of its European territory in the Balkan Wars (1912\u201313) \u2014 the 'sick man of Europe' is genuinely dying. The Young Turk government (Committee of Union and Progress) has seized power promising modernization, but faces rebellion in Arabia, Armenian resistance in Anatolia, and financial dependence on German banks.\n\nThe Ottomans enter World War I on the German side in October 1914, hoping to recover lost territory and escape the chokehold of British and French creditors. Instead, British forces will advance from Egypt and India, Arab revolt will begin in 1916, and by 1918 the empire will be finished \u2014 partitioned into the modern states of Turkey, Syria, Iraq, Jordan, Israel/Palestine, and Saudi Arabia.",
+    "population_estimate": "~20 million",
+    "ruler": "Sultan Mehmed V (figurehead); Enver Pasha, Talaat Pasha (real power)",
+    "capital": "Constantinople",
+    "key_events": [
+      "Balkan Wars (1912\u201313) strip away most remaining European territory",
+      "Young Turk government takes power promising reform",
+      "Ottomans join WWI on German side (October 1914)",
+      "Armenian Genocide (1915\u20131916) \u2014 estimated 600,000\u20131.5 million killed"
+    ],
+    "did_you_know": "The Ottoman Empire's partition after WWI was largely decided in secret \u2014 the Sykes-Picot Agreement (1916) between Britain and France drew borders across the Middle East with a ruler, dividing territories based on European interests rather than local ethnic, religious, or tribal realities. The consequences of those arbitrarily drawn lines are still felt today."
+  },
+  "united_states": {
+    "region_id": "united_states",
+    "name": "United States",
+    "year": 1914,
+    "summary": "The United States in 1914 is the world's largest economy but not yet a major military power by European standards. Woodrow Wilson wins the presidency promising domestic reform and non-involvement in European affairs. When war breaks out in Europe in August 1914, the United States declares neutrality \u2014 a position that most Americans strongly support.\n\nBut America's industrial might makes neutrality increasingly difficult to maintain. Both sides need American goods, credit, and eventually manpower. Germany's unrestricted submarine warfare, sinking American ships, and the Zimmermann Telegram (proposing German-Mexican alliance against the U.S.) will push Wilson to ask Congress for war in April 1917.",
+    "population_estimate": "~99 million",
+    "ruler": "President Woodrow Wilson (r. 1913\u20131921)",
+    "capital": "Washington D.C.",
+    "key_events": [
+      "US is the world's largest economy but officially neutral in WWI",
+      "Sinking of the Lusitania (1915) \u2014 1,198 killed, including 128 Americans",
+      "Zimmermann Telegram (1917) \u2014 Germany proposes Mexico attack the US",
+      "US enters WWI (April 1917) \u2014 tipping the balance decisively against Germany"
+    ],
+    "did_you_know": "When American troops finally arrived in France in 1917\u201318, they brought something as valuable as fresh soldiers: an immune system naive to the European strains of disease that had decimated both sides. But they also brought the 1918 influenza pandemic, which would kill more people than the entire war."
+  },
+  "austria_hungary": {
+    "region_id": "austria_hungary",
+    "name": "Austro-Hungarian Empire",
+    "year": 1914,
+    "summary": "The Austro-Hungarian Empire \u2014 a 'multinational state' governing Germans, Hungarians, Czechs, Slovaks, Poles, Ukrainians, Romanians, Slovenes, Croats, and Serbs \u2014 is held together primarily by the elderly Emperor Franz Joseph I, who has reigned since 1848. When he dies in 1916, the empire has no obvious reason to continue existing.\n\nIt is Austro-Hungary's ultimatum to Serbia following the assassination of Archduke Franz Ferdinand that starts the war. The empire hoped for a small, punitive war to reassert its authority in the Balkans \u2014 instead it triggered the largest war in history to that point, one that will kill the empire itself by 1918.",
+    "population_estimate": "~52 million",
+    "ruler": "Emperor Franz Joseph I (r. 1848\u20131916)",
+    "capital": "Vienna",
+    "key_events": [
+      "Archduke Franz Ferdinand assassinated in Sarajevo (June 28, 1914)",
+      "Austria-Hungary's ultimatum to Serbia sparks WWI",
+      "Franz Joseph I \u2014 emperor for 68 years \u2014 a symbol of the old order",
+      "Empire disintegrates in 1918 into Austria, Hungary, Czechoslovakia, Yugoslavia"
+    ],
+    "did_you_know": "Franz Joseph I reigned for 68 years \u2014 the third longest reign of any monarch in European history. He came to the throne in 1848 during revolutionary upheaval and died in 1916 during the most catastrophic war the world had ever seen, outlasting every institution he had known."
+  },
+  "france": {
+    "region_id": "france",
+    "name": "French Republic / Colonial Empire",
+    "year": 1914,
+    "summary": "France in 1914 is the world's second largest colonial empire after Britain, governing 60 million colonial subjects in North Africa, West Africa, Indochina, and the Pacific. Domestically, France is a vibrant if politically divided republic \u2014 the Third Republic has survived the trauma of the Prussian defeat of 1871 and the humiliation of Alsace-Lorraine's loss.\n\nFrance's alliance with Russia (Franco-Russian Alliance, 1894) and informal entente with Britain (Entente Cordiale, 1904) position it against Germany and Austria-Hungary. The French army, rebuilt since 1871, goes to war in 1914 with offensive doctrine and insufficient respect for machine guns and artillery \u2014 early losses are catastrophic. But France will endure four years of trench warfare on its own soil.",
+    "population_estimate": "~40 million in France; ~60 million in colonies",
+    "ruler": "President Raymond Poincar\u00e9; Prime Minister Ren\u00e9 Viviani",
+    "capital": "Paris",
+    "key_events": [
+      "Alsace-Lorraine still lost to Germany since 1871 \u2014 revenge is a national obsession",
+      "Franco-Russian Alliance and Entente Cordiale align France against Germany",
+      "Battle of the Marne (1914) stops German advance 30 miles from Paris",
+      "Verdun (1916) \u2014 France and Germany each lose hundreds of thousands"
+    ],
+    "did_you_know": "The Battle of Verdun (February\u2013December 1916) lasted 303 days and killed approximately 700,000 soldiers \u2014 roughly 2,300 per day. The fortifications at Verdun still contain the remains of an estimated 130,000 unidentified soldiers. Verdun is the longest battle in history."
+  }
+}

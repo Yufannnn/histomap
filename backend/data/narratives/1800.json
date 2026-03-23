@@ -1,0 +1,114 @@
+{
+  "united_kingdom": {
+    "region_id": "united_kingdom",
+    "name": "British Empire",
+    "year": 1800,
+    "summary": "Britain stands at the dawn of global dominance. The Industrial Revolution, ignited in the mills and mines of northern England, is giving Britain an economic and military edge that no other nation can yet match. Steam power, coal, iron, and textile machinery are transforming the world economy \u2014 and Britain controls all of them.\n\nThe loss of the American colonies (1783) has been more than compensated by gains in India, where the East India Company controls Bengal and is extending its reach across the subcontinent. Australia has just been settled. The Napoleonic Wars are reshaping Europe, and Britain's Royal Navy \u2014 the most powerful fleet in the world \u2014 guarantees British commercial dominance on every ocean.",
+    "population_estimate": "~10 million in Britain; ~200 million under influence or control",
+    "ruler": "King George III (r. 1760\u20131820)",
+    "capital": "London",
+    "key_events": [
+      "Industrial Revolution transforms Britain into the world's manufacturing center",
+      "Battle of the Nile (1798) \u2014 Nelson destroys French fleet, securing Mediterranean",
+      "East India Company controls Bengal and expands across India",
+      "Abolition movement gains strength \u2014 slave trade will be abolished in 1807"
+    ],
+    "did_you_know": "At its peak in the early 20th century, the British Empire covered roughly 25% of the world's land surface and governed about 20% of the world's population \u2014 the largest empire in human history. In 1800, this was just beginning."
+  },
+  "france": {
+    "region_id": "france",
+    "name": "Napoleonic France",
+    "year": 1800,
+    "summary": "Napoleon Bonaparte has seized power through the coup of 18 Brumaire (November 1799) and made himself First Consul of France. He will crown himself Emperor in 1804. Emerging from the chaos of the French Revolution, Napoleon channels revolutionary energy outward, conquering most of continental Europe and reshaping its legal and political landscape.\n\nThe Napoleonic Code \u2014 a comprehensive legal system Napoleon imposed across conquered Europe \u2014 abolished feudalism, established equality before the law, and protected property rights. Its influence persists in the legal systems of dozens of countries today. Napoleon's battles are the most studied in military history, and the era he defined \u2014 the Napoleonic Era \u2014 reshaped Europe's map and political imagination.",
+    "population_estimate": "~28 million in France",
+    "ruler": "Napoleon Bonaparte, First Consul (r. 1799\u20131804), then Emperor (1804\u20131814/15)",
+    "capital": "Paris",
+    "key_events": [
+      "Coup of 18 Brumaire (1799) \u2014 Napoleon seizes power",
+      "Battle of Marengo (1800) secures Napoleon's rule",
+      "Napoleonic Code drafted \u2014 revolutionary legal reforms spread across Europe",
+      "Louisiana Purchase (1803) \u2014 Napoleon sells French North America to the U.S."
+    ],
+    "did_you_know": "Napoleon was not short \u2014 this is a British propaganda myth. Contemporary records show he was about 5'7\" (170 cm), average height for the era. The confusion arose partly from a difference between French and English measurement units, and partly from British caricatures deliberately depicting him as tiny."
+  },
+  "qing_empire": {
+    "region_id": "qing_empire",
+    "name": "Qing Dynasty",
+    "year": 1800,
+    "summary": "The Qing Dynasty governs the largest China has ever been \u2014 including Tibet, Mongolia, Xinjiang, and Manchuria alongside the traditional Han heartland. Emperor Qianlong (just retired in 1799) presided over a century of expansion and prosperity, and China in 1800 still produces approximately 30% of world GDP \u2014 more than all of Europe combined.\n\nHowever, storm clouds are gathering. The population has exploded from 150 million to 300 million in a century, straining agricultural systems. Corruption plagues the bureaucracy. A British trade mission in 1793 under Lord Macartney was famously turned away by the emperor, who declared China had no need for 'barbarian' products \u2014 a decision that reflects the self-confidence and the blind spot of the late Qing. The Opium Wars are four decades away.",
+    "population_estimate": "~300 million",
+    "ruler": "Jiaqing Emperor (r. 1796\u20131820)",
+    "capital": "Beijing",
+    "key_events": [
+      "Qing Empire at its largest territorial extent under Qianlong",
+      "Lord Macartney's trade mission rejected (1793) \u2014 a fateful decision",
+      "White Lotus Rebellion (1796\u20131804) signals growing internal stress",
+      "China produces ~30% of world GDP but is about to fall behind rapidly"
+    ],
+    "did_you_know": "In 1800, China was the world's largest economy, producing roughly 30% of global GDP \u2014 comparable to the United States today. Within a century, repeated wars, unequal treaties, and internal upheaval reduced China to a fraction of its former economic weight. This 'century of humiliation' profoundly shapes Chinese identity today."
+  },
+  "ottoman_empire": {
+    "region_id": "ottoman_empire",
+    "name": "Ottoman Empire",
+    "year": 1800,
+    "summary": "The Ottoman Empire in 1800 is vast but weakening \u2014 often called 'the sick man of Europe,' though this phrase won't appear for another fifty years. Provinces are increasingly autonomous, janissaries (the elite troops) have become a political force resistant to reform, and European powers are beginning to encroach on Ottoman territory.\n\nNapoleon's invasion of Egypt in 1798 \u2014 technically Ottoman territory \u2014 exposed the empire's inability to defend its periphery. The Ottomans are beginning to recognize they must modernize, but every reform attempt triggers conservative backlash. Sultan Selim III is attempting military modernization (Nizam-\u0131 Cedid), but will be overthrown by janissaries resisting change.",
+    "population_estimate": "~25\u201330 million",
+    "ruler": "Selim III (r. 1789\u20131807)",
+    "capital": "Constantinople",
+    "key_events": [
+      "Napoleon invades Egypt (1798) \u2014 exposing Ottoman weakness",
+      "Selim III attempts military reform (Nizam-\u0131 Cedid) against janissary resistance",
+      "Greek independence movement is beginning to stir",
+      "Wahhabi movement in Arabia challenges Ottoman religious authority"
+    ],
+    "did_you_know": "The Ottoman Empire's decline took over a century \u2014 a remarkably slow collapse for what critics called a dying state. At its end in 1923, the Ottoman Empire had outlasted nearly every contemporary state that had declared it finished. Its successor, modern Turkey, emerged from the wreckage under Mustafa Kemal Atat\u00fcrk."
+  },
+  "united_states_of_america": {
+    "region_id": "united_states_of_america",
+    "name": "United States",
+    "year": 1800,
+    "summary": "The United States in 1800 is a young republic of 16 states and approximately 5 million people, still clinging to the eastern seaboard. The first presidential transfer of power \u2014 from John Adams to Thomas Jefferson \u2014 is about to occur peacefully, a remarkable and non-obvious achievement for a new nation.\n\nThe Louisiana Purchase (1803) will double the country's size overnight. The great westward expansion is beginning. But slavery casts a shadow over the republic's founding ideals \u2014 the Constitution's compromise on slavery is a wound that will require a devastating civil war six decades later to begin to heal.",
+    "population_estimate": "~5 million (including ~900,000 enslaved people)",
+    "ruler": "John Adams (2nd President, 1797\u20131801); Jefferson elected 1800",
+    "capital": "Washington D.C. (capital since 1800)",
+    "key_events": [
+      "First peaceful transfer of presidential power \u2014 Adams to Jefferson (1801)",
+      "Washington D.C. becomes the new capital in 1800",
+      "Louisiana Purchase will double US territory (1803)",
+      "Cotton gin (1793) dramatically expands demand for enslaved labor in the South"
+    ],
+    "did_you_know": "When Washington D.C. became the capital in 1800, it was a swampy construction site with a population of about 3,000. The Capitol building was unfinished, the President's House (not yet called the White House) had just been built, and Pennsylvania Avenue was an unpaved path through mud."
+  },
+  "russian_empire": {
+    "region_id": "russian_empire",
+    "name": "Russian Empire",
+    "year": 1800,
+    "summary": "The Russian Empire under Tsar Paul I (and soon Alexander I) is the largest state in the world by land area, stretching from Poland to the Pacific. Peter the Great and Catherine the Great transformed Russia from a backward medieval state into a major European power over the previous century, adopting Western technology and culture while maintaining autocratic rule.\n\nRussia is rapidly expanding in all directions: southward toward the Ottoman Empire and Persia, eastward across Siberia (Russian settlers reach Alaska), and westward into Poland and Finland. Napoleon is about to make the catastrophic mistake of invading Russia in 1812 \u2014 a campaign that will destroy his Grande Arm\u00e9e and reshape European history.",
+    "population_estimate": "~36 million",
+    "ruler": "Tsar Paul I (r. 1796\u20131801); Alexander I from 1801",
+    "capital": "Saint Petersburg",
+    "key_events": [
+      "Russia expands to include Alaska (Russian America) and Central Asia",
+      "Catherine the Great's legacy \u2014 Westernization and territorial expansion",
+      "Napoleon's invasion (1812) will end in catastrophic French defeat",
+      "Russian culture \u2014 Pushkin, later Tolstoy \u2014 beginning to flourish"
+    ],
+    "did_you_know": "Russia sold Alaska to the United States in 1867 for $7.2 million \u2014 roughly 2 cents per acre. The Russians considered it a strategic liability too expensive to defend. When gold was discovered there in 1896 and oil in the 20th century, the transaction was retrospectively called 'Seward's Folly' \u2014 but the real folly was Russia's."
+  },
+  "maratha_confederacy": {
+    "region_id": "maratha_confederacy",
+    "name": "Maratha Confederacy",
+    "year": 1800,
+    "summary": "The Maratha Confederacy, emerging from the western Deccan in the 17th century, had become the dominant power in India after breaking the Mughal Empire. By 1800, the Marathas control most of the Indian subcontinent outside of British Bengal and the far south. Their cavalry, which once raided as far as Bengal and the Punjab, represents the most formidable Indian military force of the era.\n\nHowever, the Marathas are weakening \u2014 internal divisions between the major Maratha chiefs (Peshwa, Sindhia, Holkar, Bhonsle) are crippling their ability to respond to the growing British threat. The Second and Third Anglo-Maratha Wars (1803\u20131805, 1817\u20131818) will break the Confederacy, and British dominance over India will be complete.",
+    "population_estimate": "~100 million under Maratha influence",
+    "ruler": "Peshwa Baji Rao II (r. 1796\u20131818)",
+    "capital": "Pune",
+    "key_events": [
+      "Marathas are the dominant power in India, controlling most of the subcontinent",
+      "Battle of Panipat (1761) \u2014 Maratha power checked by Afghan Ahmad Shah Durrani",
+      "British East India Company begins to encroach from Bengal",
+      "Second Anglo-Maratha War (1803\u201305) \u2014 Sindhia and Bhonsle defeated by British"
+    ],
+    "did_you_know": "At the Battle of Assaye in 1803, a young British commander named Arthur Wellesley defeated a much larger Maratha army \u2014 a victory he later called his 'hardest fought' battle, even harder than Waterloo. Wellesley became the Duke of Wellington and defeated Napoleon 12 years later."
+  }
+}
