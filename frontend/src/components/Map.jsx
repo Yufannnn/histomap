@@ -64,7 +64,7 @@ function featureStyle(feature) {
 
   return {
     fillColor: color,
-    fillOpacity: isTribal ? 0.15 : precision === 3 ? 0.5 : 0.38,
+    fillOpacity: isTribal ? 0.22 : precision === 3 ? 0.5 : 0.4,
     color: isTribal ? 'rgba(80,60,40,0.15)' : 'rgba(60,40,20,0.45)',
     weight: precision === 3 ? 1.5 : isTribal ? 0.3 : 0.8,
     dashArray: precision === 1 ? '4 3' : null,
