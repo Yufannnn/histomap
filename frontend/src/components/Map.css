@@ -16,10 +16,9 @@
   height: 100%;
   width: 100%;
   background:
-    radial-gradient(ellipse at 20% 30%, rgba(180, 155, 120, 0.25) 0%, transparent 50%),
-    radial-gradient(ellipse at 75% 65%, rgba(170, 145, 110, 0.2) 0%, transparent 45%),
-    radial-gradient(ellipse at 50% 80%, rgba(190, 165, 130, 0.15) 0%, transparent 40%),
-    linear-gradient(135deg, #efe3cb 0%, #e2d4b8 25%, #ece0c8 50%, #ddd0b6 75%, #e8dcc4 100%);
+    radial-gradient(ellipse at 30% 40%, rgba(140, 170, 190, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(130, 160, 185, 0.1) 0%, transparent 45%),
+    linear-gradient(135deg, #c8d5dd 0%, #b8c8d4 30%, #c4d2dc 55%, #b5c5d0 80%, #c0ced8 100%);
 }
 
 /* Noise grain for paper texture */
