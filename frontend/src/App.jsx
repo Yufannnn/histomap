@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Map from './components/Map.jsx';
 import Timeline from './components/Timeline.jsx';
 import InfoPanel from './components/InfoPanel.jsx';
+import Search from './components/Search.jsx';
 import './App.css';
 
 const ERAS = [
@@ -23,8 +24,25 @@ function App() {
     setSelectedRegion(null);
   }
 
+  const handleSearchSelect = useCallback((result) => {
+    const era = ERAS.find((e) => e.yearKey === result.yearKey);
+    if (era) {
+      setSelectedEra(era);
+      // Create a minimal feature object so InfoPanel can fetch the narrative
+      setSelectedRegion({
+        properties: {
+          region_id: result.regionId,
+          name: result.name,
+          culture_group: result.culture,
+          color: result.color,
+        },
+      });
+    }
+  }, []);
+
   return (
     <div className="app-shell">
+      <Search onSelect={handleSearchSelect} />
       <header className="app-title">
         <div className="app-title-left">
           <span className="app-title-logo">HISTOMAP</span>
