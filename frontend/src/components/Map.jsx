@@ -81,7 +81,8 @@ function MapController() {
     const fit = () => {
       map.invalidateSize();
       if (!fitted.current) {
-        map.fitBounds([[-58, -165], [75, 180]], { animate: false });
+        // Europe + North Africa + Middle East focus
+        map.fitBounds([[10, -15], [62, 55]], { animate: false });
         fitted.current = true;
       }
     };
@@ -167,10 +168,10 @@ function Map({ era, onRegionClick }) {
       if (name && culture !== 'other' && !skip.test(name)) {
         const short = name.length > 25 ? name.split(/[(/]/)[0].trim() : name;
         let sizeClass = '';
-        if (extent > 700) sizeClass = 'label-xl';       // always visible
-        else if (extent > 200) sizeClass = 'label-lg';   // zoom 2+
-        else if (extent > 50) sizeClass = 'label-md';    // zoom 3+
-        else if (extent > 10) sizeClass = 'label-sm';    // zoom 4+
+        if (extent > 400) sizeClass = 'label-xl';       // always visible
+        else if (extent > 100) sizeClass = 'label-lg';   // zoom 2+
+        else if (extent > 25) sizeClass = 'label-md';    // zoom 3+
+        else if (extent > 5) sizeClass = 'label-sm';     // zoom 4+
         else sizeClass = 'label-xs';                      // zoom 5+
 
         layer.bindTooltip(short, {
