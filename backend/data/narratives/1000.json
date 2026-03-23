@@ -110,5 +110,22 @@
       "Obsidian trade network extends across Mesoamerica"
     ],
     "did_you_know": "When Spanish conquistadors arrived in Mexico, Aztec nobles claimed descent from the Toltecs and considered Toltec culture the gold standard of civilization. The Aztec word for an skilled artisan was literally 'Toltec' \u2014 the name had become synonymous with craftsmanship and wisdom."
+  },
+  "magyars": {
+    "region_id": "magyars",
+    "name": "Kingdom of Hungary (Magyars)",
+    "year": 1000,
+    "featured": true,
+    "summary": "YOUR ARTICLE HERE — Replace this with your own writing about the Magyars at 1000 AD.",
+    "population_estimate": "~1 million",
+    "ruler": "King Stephen I (r. 1000–1038 AD)",
+    "capital": "Esztergom",
+    "key_events": [
+      "Stephen I crowned as first King of Hungary (1000 AD)",
+      "Christianization of the Magyar tribes",
+      "Establishment of the Hungarian state and legal system",
+      "Integration into Western European Christendom"
+    ],
+    "did_you_know": "The Magyars originally migrated from the Ural steppes and terrorized Europe with devastating cavalry raids in the 10th century. Their defeat at the Battle of Lechfeld (955 AD) ended the raids and began their transformation into a settled Christian kingdom."
   }
 }

@@ -162,7 +162,7 @@ function Map({ era, onRegionClick }) {
         });
       }
 
-      // Featured regions get a golden glow border
+      // Featured regions get a golden glow border + CSS animation class
       if (props.featured) {
         layer.setStyle({
           ...baseStyle,
@@ -170,6 +170,7 @@ function Map({ era, onRegionClick }) {
           weight: 2.5,
           dashArray: null,
           fillOpacity: baseStyle.fillOpacity + 0.1,
+          className: 'featured-region',
         });
       }
 

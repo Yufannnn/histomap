@@ -44,6 +44,22 @@
   box-shadow: inset 0 0 100px 30px rgba(60, 45, 25, 0.12);
 }
 
+/* Featured region glow animation */
+.featured-region {
+  filter: drop-shadow(0 0 6px rgba(201, 168, 76, 0.5));
+  animation: featuredGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes featuredGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(201, 168, 76, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(201, 168, 76, 0.6))
+           drop-shadow(0 0 20px rgba(201, 168, 76, 0.2));
+  }
+}
+
 /* Remove focus outline on click */
 .leaflet-interactive:focus { outline: none !important; }
 .leaflet-container :focus { outline: none !important; }
