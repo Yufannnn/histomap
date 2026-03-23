@@ -81,8 +81,8 @@ function MapController() {
     const fit = () => {
       map.invalidateSize();
       if (!fitted.current) {
-        // Europe + North Africa + Middle East focus
-        map.fitBounds([[10, -15], [62, 55]], { animate: false });
+        // Europe + North Africa + Middle East
+        map.fitBounds([[8, -25], [68, 65]], { animate: false });
         fitted.current = true;
       }
     };
