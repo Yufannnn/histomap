@@ -63,7 +63,16 @@ function InfoPanel({ region, era, onClose }) {
 
         {!loading && narrative && (
           <>
-            <div className="panel-meta-grid anim-item" style={{ '--i': 1 }}>
+            {narrative.featured && (
+              <div className="panel-featured-badge anim-item" style={{ '--i': 1 }}>
+                <span className="featured-quill">✦</span>
+                <div>
+                  <span className="featured-title">Author's Note</span>
+                  <span className="featured-byline">Written by Henry Zhu Yufan</span>
+                </div>
+              </div>
+            )}
+            <div className="panel-meta-grid anim-item" style={{ '--i': narrative.featured ? 2 : 1 }}>
               {narrative.ruler && (
                 <div className="panel-meta-item">
                   <span className="meta-icon">👑</span>

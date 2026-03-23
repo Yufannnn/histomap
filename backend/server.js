@@ -48,9 +48,33 @@ for (const era of ERAS) {
   }
 }
 
+// Build featured regions index from narratives with "featured": true
+const featuredCache = {};
+for (const era of ERAS) {
+  const narratives = narrativesCache[era.yearKey] || {};
+  featuredCache[era.yearKey] = Object.keys(narratives).filter(
+    (rid) => narratives[rid].featured
+  );
+}
+
+// Inject "featured" flag into border features so frontend can style them
+for (const era of ERAS) {
+  const borders = bordersCache[era.yearKey];
+  const featured = featuredCache[era.yearKey] || [];
+  if (borders && featured.length > 0) {
+    for (const feat of borders.features) {
+      const rid = feat.properties.region_id;
+      if (rid && featured.includes(rid)) {
+        feat.properties.featured = true;
+      }
+    }
+  }
+}
+
 // Expose cache and ERAS to routes
 app.locals.bordersCache = bordersCache;
 app.locals.narrativesCache = narrativesCache;
+app.locals.featuredCache = featuredCache;
 app.locals.ERAS = ERAS;
 
 app.use('/api/eras', require('./routes/eras'));

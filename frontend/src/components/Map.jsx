@@ -162,18 +162,39 @@ function Map({ era, onRegionClick }) {
         });
       }
 
+      // Featured regions get a golden glow border
+      if (props.featured) {
+        layer.setStyle({
+          ...baseStyle,
+          color: '#c9a84c',
+          weight: 2.5,
+          dashArray: null,
+          fillOpacity: baseStyle.fillOpacity + 0.1,
+        });
+      }
+
       layer.on({
         click: () => onRegionClick(feature),
         mouseover: (e) => {
           e.target.setStyle({
             fillOpacity: 0.6,
             weight: 2,
-            color: 'rgba(40,30,15,0.8)',
+            color: props.featured ? '#dbb84c' : 'rgba(40,30,15,0.8)',
             dashArray: null,
           });
         },
         mouseout: (e) => {
-          e.target.setStyle(baseStyle);
+          if (props.featured) {
+            e.target.setStyle({
+              ...baseStyle,
+              color: '#c9a84c',
+              weight: 2.5,
+              dashArray: null,
+              fillOpacity: baseStyle.fillOpacity + 0.1,
+            });
+          } else {
+            e.target.setStyle(baseStyle);
+          }
         },
       });
     },

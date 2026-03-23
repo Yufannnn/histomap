@@ -3,6 +3,7 @@
     "region_id": "roman_empire",
     "name": "Roman Empire",
     "year": 1,
+    "featured": true,
     "summary": "At the dawn of the Common Era, the Roman Empire stands at the height of its power, stretching from the windswept shores of Britannia to the sun-baked deserts of Mesopotamia. Under Augustus Caesar, Rome has transformed from a turbulent republic into a stable autocracy\u2014the Principate\u2014while maintaining the outward forms of republican governance. The Mediterranean Sea, which Romans call mare nostrum (\"our sea\"), is ringed entirely by Roman territory, making it the world's most impressive political achievement to date.\n\nThe Pax Romana\u2014the Roman Peace\u2014has begun. For the next two centuries, trade will flourish, cities will grow, and the roads radiating from Rome will carry goods, soldiers, ideas, and diseases to every corner of the known Western world. Legions patrol frontiers on the Rhine and Danube, holding back Germanic tribes, while in the East, a tense equilibrium with the Parthian Empire defines the edge of Roman ambition.",
     "population_estimate": "~50 million",
     "ruler": "Augustus Caesar (r. 27 BC \u2013 14 AD)",
