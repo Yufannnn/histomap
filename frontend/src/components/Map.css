@@ -33,14 +33,17 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
 }
 
-/* Vignette */
+/* Map border + vignette */
 .geojson-fade::after {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 3;
   pointer-events: none;
-  box-shadow: inset 0 0 100px 30px rgba(60, 45, 25, 0.12);
+  box-shadow:
+    inset 0 0 0 3px rgba(60, 45, 25, 0.25),
+    inset 0 0 0 5px rgba(60, 45, 25, 0.08),
+    inset 0 0 80px 20px rgba(60, 45, 25, 0.1);
 }
 
 /* Featured region glow animation */
@@ -169,34 +172,92 @@
 
 .region-tooltip::before { display: none !important; }
 
-/* Ancient name labels on map */
+/* Ancient name labels on map — dynamic sizing */
 .ancient-label {
   background: none !important;
   border: none !important;
   box-shadow: none !important;
-  color: rgba(40, 30, 15, 0.55) !important;
   font-family: 'Crimson Text', serif !important;
-  font-style: italic !important;
-  font-size: 10px !important;
-  font-weight: 400 !important;
   text-align: center !important;
   white-space: nowrap !important;
   pointer-events: none !important;
-  text-shadow: 1px 1px 2px rgba(244, 234, 213, 0.8) !important;
-  letter-spacing: 0.08em !important;
-}
-
-.ancient-label.major {
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  color: rgba(40, 30, 15, 0.7) !important;
-  letter-spacing: 0.14em !important;
-  text-transform: uppercase !important;
-  font-style: normal !important;
-  text-shadow: 1px 1px 3px rgba(244, 234, 213, 0.9) !important;
+  text-shadow:
+    1px 1px 2px rgba(200, 195, 180, 0.9),
+    -1px -1px 2px rgba(200, 195, 180, 0.9) !important;
+  transition: font-size 0.2s ease, opacity 0.2s ease !important;
 }
 
 .ancient-label::before { display: none !important; }
+
+/* Size tiers */
+.ancient-label.label-xl {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: rgba(40, 30, 15, 0.7) !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+.ancient-label.label-lg {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: rgba(40, 30, 15, 0.6) !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+.ancient-label.label-md {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  color: rgba(40, 30, 15, 0.5) !important;
+  letter-spacing: 0.06em !important;
+  font-style: italic !important;
+}
+
+.ancient-label.label-sm {
+  font-size: 9px !important;
+  font-weight: 400 !important;
+  color: rgba(40, 30, 15, 0.45) !important;
+  font-style: italic !important;
+}
+
+.ancient-label.label-xs {
+  font-size: 8px !important;
+  font-weight: 400 !important;
+  color: rgba(40, 30, 15, 0.4) !important;
+  font-style: italic !important;
+}
+
+/* Zoom-based visibility: hide smaller labels when zoomed out */
+[data-zoom="0"] .label-lg,
+[data-zoom="0"] .label-md,
+[data-zoom="0"] .label-sm,
+[data-zoom="0"] .label-xs,
+[data-zoom="1"] .label-md,
+[data-zoom="1"] .label-sm,
+[data-zoom="1"] .label-xs,
+[data-zoom="2"] .label-sm,
+[data-zoom="2"] .label-xs,
+[data-zoom="3"] .label-xs {
+  opacity: 0 !important;
+}
+
+/* Scale up labels when zoomed in */
+[data-zoom="4"] .label-xl,
+[data-zoom="5"] .label-xl,
+[data-zoom="6"] .label-xl,
+[data-zoom="7"] .label-xl { font-size: 18px !important; }
+
+[data-zoom="4"] .label-lg,
+[data-zoom="5"] .label-lg { font-size: 14px !important; }
+[data-zoom="6"] .label-lg,
+[data-zoom="7"] .label-lg { font-size: 16px !important; }
+
+[data-zoom="5"] .label-md,
+[data-zoom="6"] .label-md { font-size: 13px !important; }
+
+[data-zoom="5"] .label-sm,
+[data-zoom="6"] .label-sm { font-size: 11px !important; }
 
 /* Legend */
 .map-legend {

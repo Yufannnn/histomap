@@ -72,10 +72,11 @@ function featureStyle(feature) {
   };
 }
 
-// Fit the whole world on initial load and on resize
-function MapFitter() {
+// Fit world on load + dynamic label sizing on zoom
+function MapController() {
   const map = useMap();
   const fitted = useRef(false);
+
   useEffect(() => {
     const fit = () => {
       map.invalidateSize();
@@ -84,10 +85,19 @@ function MapFitter() {
         fitted.current = true;
       }
     };
+    const updateLabels = () => {
+      const zoom = map.getZoom();
+      const root = map.getContainer();
+      root.setAttribute('data-zoom', Math.round(zoom));
+    };
     const onResize = () => map.invalidateSize();
+    map.on('zoomend', updateLabels);
     window.addEventListener('resize', onResize);
-    setTimeout(fit, 200);
-    return () => window.removeEventListener('resize', onResize);
+    setTimeout(() => { fit(); updateLabels(); }, 200);
+    return () => {
+      map.off('zoomend', updateLabels);
+      window.removeEventListener('resize', onResize);
+    };
   }, [map]);
   return null;
 }
@@ -152,13 +162,21 @@ function Map({ era, onRegionClick }) {
       const culture = props.culture_group || 'other';
       const extent = geoExtent(feature.geometry);
 
-      const skip = /(hunter|gatherer|peoples|fisher|bison|desert|savanna|subarctic|taiga|arctic|mammal|forag|malay|caribbean|amazon|saharan|aboriginal|paleo)/i;
-      if (name && culture !== 'other' && extent > 700 && !skip.test(name)) {
-        const short = name.length > 22 ? name.split(/[(/]/)[0].trim() : name;
+      // Dynamic labels: large empires always visible, smaller states appear on zoom
+      const skip = /(hunter|gatherer|peoples|fisher|bison|desert|savanna|subarctic|taiga|arctic|mammal|forag|caribbean|amazon|saharan|aboriginal|paleo|uncharted|first nations|inuit|aleut|polynesian|dorset|arabian tribes|maori)/i;
+      if (name && culture !== 'other' && !skip.test(name)) {
+        const short = name.length > 25 ? name.split(/[(/]/)[0].trim() : name;
+        let sizeClass = '';
+        if (extent > 700) sizeClass = 'label-xl';       // always visible
+        else if (extent > 200) sizeClass = 'label-lg';   // zoom 2+
+        else if (extent > 50) sizeClass = 'label-md';    // zoom 3+
+        else if (extent > 10) sizeClass = 'label-sm';    // zoom 4+
+        else sizeClass = 'label-xs';                      // zoom 5+
+
         layer.bindTooltip(short, {
           permanent: true,
           direction: 'center',
-          className: 'ancient-label major',
+          className: `ancient-label ${sizeClass}`,
           interactive: false,
         });
       }
@@ -229,7 +247,7 @@ function Map({ era, onRegionClick }) {
           zoomControl={true}
           worldCopyJump={false}
         >
-          <MapFitter />
+          <MapController />
 
           {displayedGeojson && (
             <GeoJSON
