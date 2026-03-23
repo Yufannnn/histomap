@@ -1,0 +1,27 @@
+services:
+  # Backend API
+  - type: web
+    name: histomap-api
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 3001
+    plan: free
+    autoDeploy: true
+
+  # Frontend static site
+  - type: web
+    name: histomap
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /api/*
+        destination: https://histomap-api.onrender.com/api/*
+    plan: free
+    autoDeploy: true
