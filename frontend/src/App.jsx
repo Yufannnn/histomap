@@ -31,6 +31,9 @@ function App() {
           <div className="app-title-divider" />
           <span className="app-title-tagline">A journey through the ages</span>
         </div>
+        <div className="app-title-right">
+          <span className="app-title-credit">by Henry Zhu Yufan</span>
+        </div>
       </header>
       <Map
         era={selectedEra}
