@@ -1,0 +1,258 @@
+/* Shelf view */
+.library-shelf {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+}
+
+.shelf-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.shelf-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 36px;
+  color: #f4ead5;
+  margin-bottom: 6px;
+}
+
+.shelf-desc {
+  font-size: 16px;
+  color: rgba(244, 234, 213, 0.4);
+  font-style: italic;
+}
+
+.shelf-rule {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.4), transparent);
+  margin: 16px auto 0;
+}
+
+/* Book cards on shelf */
+.shelf-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.shelf-book {
+  display: flex;
+  background: rgba(244, 234, 213, 0.03);
+  border: 1px solid rgba(244, 234, 213, 0.06);
+  border-radius: 4px 12px 12px 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  animation: bookSlide 0.4s ease both;
+}
+
+@keyframes bookSlide {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.shelf-book:hover {
+  background: rgba(244, 234, 213, 0.06);
+  border-color: rgba(244, 234, 213, 0.12);
+  transform: translateX(4px);
+  box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.shelf-book.featured {
+  border-color: rgba(201, 168, 76, 0.15);
+}
+
+.shelf-book.featured:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.book-spine {
+  width: 8px;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #5a4a32, #3a2e1e);
+}
+
+.shelf-book.featured .book-spine {
+  background: linear-gradient(180deg, #c9a84c, #8a6a2e);
+}
+
+.book-content {
+  padding: 20px 24px;
+  flex: 1;
+  min-width: 0;
+}
+
+.book-badge {
+  color: #c9a84c;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.book-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: #f4ead5;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.book-excerpt {
+  font-size: 15px;
+  color: rgba(244, 234, 213, 0.45);
+  line-height: 1.5;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: rgba(244, 234, 213, 0.25);
+}
+
+.book-era { color: rgba(201, 168, 76, 0.5); }
+
+/* Reader view */
+.library-reader {
+  display: flex;
+  justify-content: center;
+  padding: 72px 20px 60px;
+}
+
+.book-page {
+  max-width: 680px;
+  width: 100%;
+  background: linear-gradient(135deg, #f5ecd7 0%, #efe3c8 40%, #f2e8d2 70%, #ece0c6 100%);
+  color: #2c2418;
+  border-radius: 2px 8px 8px 2px;
+  padding: 48px 52px;
+  box-shadow:
+    -4px 0 8px rgba(0, 0, 0, 0.15),
+    4px 0 20px rgba(0, 0, 0, 0.25),
+    0 10px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: pageOpen 0.4s ease;
+}
+
+@keyframes pageOpen {
+  from { opacity: 0; transform: rotateY(-3deg); }
+  to { opacity: 1; transform: rotateY(0); }
+}
+
+.book-page::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 20px;
+  background: linear-gradient(90deg, #d4c4a0, #e8d8b8 40%, transparent);
+  border-radius: 2px 0 0 2px;
+  opacity: 0.5;
+}
+
+.lib-back {
+  background: none; border: none;
+  color: #8a7a5a; font-family: 'Crimson Text', serif;
+  font-size: 14px; cursor: pointer;
+  margin-bottom: 24px; padding: 0;
+  transition: color 0.2s;
+}
+.lib-back:hover { color: #3a2e1e; }
+
+.lib-header { text-align: center; margin-bottom: 32px; }
+.lib-chapter {
+  font-size: 12px; color: #9a8a6a;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  display: block; margin-bottom: 10px;
+}
+.lib-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900; font-size: 32px;
+  color: #2c2418; line-height: 1.15; margin-bottom: 12px;
+}
+.lib-meta {
+  display: flex; justify-content: center; gap: 14px;
+  font-size: 13px; color: #9a8a6a; font-style: italic;
+}
+.lib-era { color: #6a5a3a; font-weight: 600; font-style: normal; }
+.lib-featured {
+  margin-top: 12px; font-size: 12px;
+  color: #b8942e; letter-spacing: 0.06em;
+}
+.lib-rule {
+  width: 50px; height: 2px;
+  background: linear-gradient(90deg, transparent, #8a7a5a, transparent);
+  margin: 18px auto 0;
+}
+
+/* Article body */
+.lib-body {
+  font-family: 'Crimson Text', serif;
+  font-size: 18px; line-height: 1.9; color: #3a3025;
+}
+.lib-body > p:first-child::first-letter {
+  font-family: 'Playfair Display', serif;
+  font-size: 58px; float: left; line-height: 0.8;
+  margin: 4px 10px 0 0; color: #2c2418; font-weight: 900;
+}
+.lib-body h1 { display: none; }
+.lib-body h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 800; color: #2c2418;
+  margin: 32px 0 12px;
+}
+.lib-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-weight: 700; color: #3a3025;
+  margin: 24px 0 10px;
+}
+.lib-body p { margin-bottom: 16px; text-align: justify; hyphens: auto; }
+.lib-body strong { color: #2c2418; font-weight: 700; }
+.lib-body blockquote {
+  border-left: 3px solid #b8942e; margin: 24px 0;
+  padding: 12px 22px; background: rgba(140, 110, 60, 0.06);
+  border-radius: 0 6px 6px 0; font-style: italic;
+  color: #5a4a32; font-size: 19px;
+}
+.lib-body blockquote p { margin-bottom: 0; text-align: left; }
+.lib-body ul, .lib-body ol { margin: 12px 0 16px 24px; }
+.lib-body li { margin-bottom: 6px; }
+.lib-body ol li { list-style-type: decimal; }
+.lib-body a { color: #7a5a2e; text-decoration: underline; }
+
+/* Footer */
+.lib-footer {
+  margin-top: 36px; padding-top: 20px;
+  border-top: 1px solid rgba(60, 45, 25, 0.1);
+}
+.lib-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  justify-content: center; margin-bottom: 16px;
+}
+.lib-tag {
+  padding: 3px 10px; border-radius: 12px;
+  border: 1px solid rgba(60, 45, 25, 0.15);
+  font-size: 12px; color: #8a7a5a;
+}
+.lib-nav-btns {
+  display: flex; justify-content: space-between;
+}
+.lib-nav-btn {
+  background: none; border: none;
+  font-family: 'Crimson Text', serif; font-size: 14px;
+  color: #8a7a5a; cursor: pointer; transition: color 0.2s;
+}
+.lib-nav-btn:hover { color: #3a2e1e; }
+
+@media (max-width: 768px) {
+  .book-page { padding: 32px 24px; }
+  .lib-title { font-size: 26px; }
+  .lib-body { font-size: 16px; }
+}

@@ -1,0 +1,104 @@
+.collections-room {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+}
+
+.coll-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.coll-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 36px;
+  color: #f4ead5;
+  margin-bottom: 6px;
+}
+
+.coll-desc {
+  font-size: 16px;
+  color: rgba(244, 234, 213, 0.4);
+  font-style: italic;
+}
+
+.coll-rule {
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.4), transparent);
+  margin: 16px auto 0;
+}
+
+.coll-empty {
+  text-align: center;
+  color: rgba(244, 234, 213, 0.25);
+  font-style: italic;
+  padding: 40px;
+}
+
+.coll-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.coll-card {
+  background: rgba(244, 234, 213, 0.03);
+  border: 1px solid rgba(244, 234, 213, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+  transition: all 0.25s;
+  animation: collFade 0.4s ease both;
+}
+
+@keyframes collFade {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.coll-card:hover {
+  background: rgba(244, 234, 213, 0.05);
+  border-color: rgba(244, 234, 213, 0.12);
+}
+
+.coll-icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.coll-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 20px;
+  color: #f4ead5;
+  margin-bottom: 4px;
+}
+
+.coll-count {
+  font-size: 12px;
+  color: rgba(244, 234, 213, 0.3);
+  display: block;
+  margin-bottom: 14px;
+}
+
+.coll-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.coll-item {
+  font-size: 14px;
+  color: rgba(244, 234, 213, 0.55);
+  padding-left: 12px;
+  border-left: 2px solid rgba(244, 234, 213, 0.08);
+  line-height: 1.4;
+}
+
+.coll-star {
+  color: #c9a84c;
+  margin-right: 4px;
+  font-size: 11px;
+}

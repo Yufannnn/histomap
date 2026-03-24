@@ -1,13 +1,21 @@
 import { useState, useEffect } from 'react';
-import BookCover from './components/BookCover.jsx';
-import TableOfContents from './components/TableOfContents.jsx';
-import ChapterView from './components/ChapterView.jsx';
+import Lobby from './components/Lobby.jsx';
+import Library from './components/Library.jsx';
+import Timeline from './components/Timeline.jsx';
+import Collections from './components/Collections.jsx';
+import RoomNav from './components/RoomNav.jsx';
 import './App.css';
 
+const ROOMS = [
+  { id: 'lobby', label: 'Lobby' },
+  { id: 'library', label: 'The Library', icon: '📖' },
+  { id: 'timeline', label: 'The Timeline', icon: '⏳' },
+  { id: 'collections', label: 'Collections', icon: '🗂' },
+];
+
 function App() {
+  const [room, setRoom] = useState('lobby');
   const [articles, setArticles] = useState([]);
-  const [page, setPage] = useState('cover'); // 'cover' | 'toc' | index number
-  const [direction, setDirection] = useState('forward');
 
   useEffect(() => {
     fetch('/api/articles')
@@ -16,72 +24,31 @@ function App() {
       .catch(() => {});
   }, []);
 
-  function goTo(target) {
-    const currentIdx = typeof page === 'number' ? page : -1;
-    const targetIdx = typeof target === 'number' ? target : -1;
-    setDirection(targetIdx > currentIdx ? 'forward' : 'back');
-    setPage(target);
+  function enterRoom(id) {
+    setRoom(id);
     window.scrollTo({ top: 0 });
   }
 
-  function goNext() {
-    if (page === 'cover') goTo('toc');
-    else if (page === 'toc') goTo(0);
-    else if (typeof page === 'number' && page < articles.length - 1) goTo(page + 1);
-  }
-
-  function goPrev() {
-    if (page === 'toc') goTo('cover');
-    else if (typeof page === 'number' && page === 0) goTo('toc');
-    else if (typeof page === 'number' && page > 0) goTo(page - 1);
-  }
-
-  const totalPages = articles.length + 2; // cover + toc + chapters
-  const currentPage = page === 'cover' ? 1 : page === 'toc' ? 2 : page + 3;
-
   return (
-    <div className="book-shell">
-      <div className={`page-container anim-${direction}`} key={page}>
-        {page === 'cover' && (
-          <BookCover onOpen={() => goTo('toc')} />
-        )}
+    <div className="museum">
+      {room !== 'lobby' && (
+        <RoomNav rooms={ROOMS} active={room} onNavigate={enterRoom} />
+      )}
 
-        {page === 'toc' && (
-          <TableOfContents
-            articles={articles}
-            onSelect={(i) => goTo(i)}
-            onBack={() => goTo('cover')}
-          />
+      <div className="room-container" key={room}>
+        {room === 'lobby' && (
+          <Lobby onEnter={enterRoom} articleCount={articles.length} />
         )}
-
-        {typeof page === 'number' && articles[page] && (
-          <ChapterView
-            article={articles[page]}
-            chapterNum={page + 1}
-            totalChapters={articles.length}
-            onGoToToc={() => goTo('toc')}
-          />
+        {room === 'library' && (
+          <Library articles={articles} />
+        )}
+        {room === 'timeline' && (
+          <Timeline articles={articles} />
+        )}
+        {room === 'collections' && (
+          <Collections articles={articles} />
         )}
       </div>
-
-      {/* Page navigation */}
-      <nav className="book-nav">
-        <button
-          className="nav-btn prev"
-          onClick={goPrev}
-          disabled={page === 'cover'}
-        >
-          ←
-        </button>
-        <span className="nav-page">{currentPage} / {totalPages}</span>
-        <button
-          className="nav-btn next"
-          onClick={goNext}
-          disabled={typeof page === 'number' && page >= articles.length - 1}
-        >
-          →
-        </button>
-      </nav>
     </div>
   );
 }
