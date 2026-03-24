@@ -11,15 +11,33 @@ const ERA_MARKERS = [
   { year: 1945, label: '1945', desc: 'End of WWII' },
 ];
 
+function parseEraYear(era) {
+  if (!era) return null;
+  const s = era.trim();
+  if (/bc/i.test(s)) return -parseInt(s) || null;
+  return parseInt(s.replace(/\s*AD\s*/i, '')) || null;
+}
+
 function Timeline({ articles }) {
-  // Map articles to their era year for positioning
-  const articlesByYear = articles.map((a) => {
-    let year = 0;
-    const era = (a.era || '').replace(/\s*AD\s*/i, '');
-    if (era.includes('BC')) year = -parseInt(era) || 0;
-    else year = parseInt(era) || 0;
-    return { ...a, eraYear: year };
-  }).sort((a, b) => a.eraYear - b.eraYear);
+  // Assign each article a year
+  const placed = articles
+    .map((a) => ({ ...a, eraYear: parseEraYear(a.era) }))
+    .filter((a) => a.eraYear !== null);
+
+  // Build a merged list: markers + articles, sorted by year
+  const items = [];
+
+  for (const marker of ERA_MARKERS) {
+    items.push({ type: 'marker', year: marker.year, ...marker });
+  }
+
+  for (const article of placed) {
+    items.push({ type: 'article', year: article.eraYear, article });
+  }
+
+  items.sort((a, b) => a.year - b.year);
+
+  let articleIdx = 0;
 
   return (
     <div className="timeline-room">
@@ -32,35 +50,44 @@ function Timeline({ articles }) {
       <div className="timeline-track">
         <div className="timeline-line" />
 
-        {ERA_MARKERS.map((marker, i) => (
-          <div key={i} className="timeline-marker">
-            <div className="marker-dot" />
-            <div className="marker-label">{marker.label}</div>
-            <div className="marker-desc">{marker.desc}</div>
-          </div>
-        ))}
+        {items.map((item, i) => {
+          if (item.type === 'marker') {
+            return (
+              <div key={`m-${i}`} className="timeline-marker">
+                <div className="marker-dot" />
+                <div className="marker-label">{item.label}</div>
+                <div className="marker-desc">{item.desc}</div>
+              </div>
+            );
+          }
 
-        {articlesByYear.map((article, i) => (
-          <div
-            key={article.slug}
-            className={`timeline-article ${article.featured ? 'featured' : ''} ${i % 2 === 0 ? 'left' : 'right'}`}
-            style={{ animationDelay: `${i * 0.1}s` }}
-          >
-            <div className="ta-connector" />
-            <div className="ta-card">
-              {article.featured && <span className="ta-star">✦</span>}
-              <span className="ta-era">{article.era}</span>
-              <h3 className="ta-title">{article.title}</h3>
-              <p className="ta-excerpt">{article.excerpt}</p>
-              <span className="ta-time">{article.readingTime}</span>
+          const side = articleIdx % 2 === 0 ? 'left' : 'right';
+          articleIdx++;
+          const a = item.article;
+
+          return (
+            <div
+              key={`a-${a.slug}`}
+              className={`timeline-article ${a.featured ? 'featured' : ''} ${side}`}
+              style={{ animationDelay: `${articleIdx * 0.1}s` }}
+            >
+              <div className="ta-connector" />
+              <div className="ta-dot" />
+              <div className="ta-card">
+                {a.featured && <span className="ta-star">✦</span>}
+                <span className="ta-era">{a.era}</span>
+                <h3 className="ta-title">{a.title}</h3>
+                <p className="ta-excerpt">{a.excerpt}</p>
+                <span className="ta-time">{a.readingTime}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      {articles.length === 0 && (
+      {placed.length === 0 && (
         <p className="timeline-empty">
-          No articles yet. Add .md files to see them placed on the timeline.
+          No articles with an era tag yet. Add <code>era: 1000 AD</code> to your .md frontmatter.
         </p>
       )}
     </div>

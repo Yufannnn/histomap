@@ -98,16 +98,35 @@
   padding-left: 52%;
 }
 
+/* Dot on the center line */
+.ta-dot {
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(168, 50, 50, 0.6);
+  border: 2px solid rgba(168, 50, 50, 0.4);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.timeline-article.featured .ta-dot {
+  background: #c9a84c;
+  border-color: rgba(201, 168, 76, 0.4);
+  box-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
+}
+
 .ta-connector {
   position: absolute;
   top: 32px;
-  width: 24px;
   height: 2px;
-  background: rgba(244, 234, 213, 0.1);
+  background: rgba(244, 234, 213, 0.12);
 }
 
-.timeline-article.left .ta-connector { right: calc(50% - 24px); }
-.timeline-article.right .ta-connector { left: calc(50% - 24px); }
+.timeline-article.left .ta-connector { right: 50%; width: calc(50% - 20px); margin-right: 12px; }
+.timeline-article.right .ta-connector { left: 50%; width: calc(50% - 20px); margin-left: 12px; }
 
 .ta-card {
   background: rgba(244, 234, 213, 0.03);
