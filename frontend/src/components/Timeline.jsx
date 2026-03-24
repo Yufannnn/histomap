@@ -1,14 +1,27 @@
 import './Timeline.css';
 
 const ERA_MARKERS = [
-  { year: -3000, label: '3000 BC', desc: 'First civilizations' },
-  { year: -500, label: '500 BC', desc: 'Classical antiquity' },
-  { year: 1, label: '1 AD', desc: 'Roman Empire era' },
-  { year: 500, label: '500', desc: 'Fall of Rome' },
-  { year: 1000, label: '1000', desc: 'Medieval world' },
-  { year: 1500, label: '1500', desc: 'Age of exploration' },
-  { year: 1800, label: '1800', desc: 'Revolutionary era' },
-  { year: 1945, label: '1945', desc: 'End of WWII' },
+  { year: -3000, label: '3000 BC', desc: 'Rise of Egypt & Mesopotamia' },
+  { year: -753, label: '753 BC', desc: 'Founding of Rome' },
+  { year: -323, label: '323 BC', desc: 'Death of Alexander the Great' },
+  { year: -27, label: '27 BC', desc: 'Roman Empire begins' },
+  { year: 1, label: '1 AD', desc: 'Dawn of the Common Era' },
+  { year: 313, label: '313', desc: 'Edict of Milan — Christianity legalized' },
+  { year: 476, label: '476', desc: 'Fall of Western Rome' },
+  { year: 622, label: '622', desc: 'Hijra — Birth of Islam' },
+  { year: 800, label: '800', desc: 'Charlemagne crowned Emperor' },
+  { year: 1000, label: '1000', desc: 'Medieval world at its height' },
+  { year: 1066, label: '1066', desc: 'Norman Conquest of England' },
+  { year: 1206, label: '1206', desc: 'Genghis Khan unites the Mongols' },
+  { year: 1347, label: '1347', desc: 'Black Death reaches Europe' },
+  { year: 1453, label: '1453', desc: 'Fall of Constantinople' },
+  { year: 1492, label: '1492', desc: 'Columbus reaches the Americas' },
+  { year: 1517, label: '1517', desc: 'Protestant Reformation begins' },
+  { year: 1776, label: '1776', desc: 'American Declaration of Independence' },
+  { year: 1789, label: '1789', desc: 'French Revolution' },
+  { year: 1815, label: '1815', desc: 'Battle of Waterloo' },
+  { year: 1914, label: '1914', desc: 'World War I begins' },
+  { year: 1945, label: '1945', desc: 'End of World War II' },
 ];
 
 function parseEraYear(era) {
