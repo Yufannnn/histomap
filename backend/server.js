@@ -81,6 +81,7 @@ app.use('/api/eras', require('./routes/eras'));
 app.use('/api/borders', require('./routes/borders'));
 app.use('/api/narratives', require('./routes/narratives'));
 app.use('/api/search', require('./routes/search'));
+app.use('/api/articles', require('./routes/articles'));
 
 app.listen(PORT, () => {
   console.log(`Histomap backend running on http://localhost:${PORT}`);
