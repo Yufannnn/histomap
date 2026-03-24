@@ -4,9 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Histomap — Interactive Historical World Map</title>
+    <title>Histomap — A Personal History Museum</title>
+
+    <!-- Open Graph / Social sharing -->
+    <meta property="og:title" content="Histomap — A Personal History Museum" />
+    <meta property="og:description" content="Essays, hot takes & deep dives on history. Curated by Henry Zhu Yufan." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://histomap.onrender.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Histomap — A Personal History Museum" />
+    <meta name="twitter:description" content="Essays, hot takes & deep dives on history. Curated by Henry Zhu Yufan." />
+    <meta name="description" content="A personal history museum featuring essays, timelines, and curated collections on history. By Henry Zhu Yufan." />
+    <meta name="theme-color" content="#1a1610" />
+
+    <!-- Loading screen styles (inline so they show before JS loads) -->
+    <style>
+      #loading-screen {
+        position: fixed; inset: 0; z-index: 9999;
+        background: #1a1610;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+        gap: 16px;
+        transition: opacity 0.5s ease;
+      }
+      #loading-screen.hidden { opacity: 0; pointer-events: none; }
+      #loading-logo {
+        font-family: Georgia, serif;
+        font-size: 24px; font-weight: bold;
+        color: #f4ead5; letter-spacing: 0.12em;
+        opacity: 0; animation: loadFade 1s ease 0.2s forwards;
+      }
+      #loading-bar {
+        width: 60px; height: 2px;
+        background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+        animation: loadPulse 1.2s ease infinite;
+      }
+      @keyframes loadFade { to { opacity: 1; } }
+      @keyframes loadPulse { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
+    </style>
   </head>
   <body>
+    <!-- Loading screen (visible until React mounts) -->
+    <div id="loading-screen">
+      <div id="loading-logo">HISTOMAP</div>
+      <div id="loading-bar"></div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

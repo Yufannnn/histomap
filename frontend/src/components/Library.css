@@ -120,11 +120,37 @@
 
 .book-era { color: rgba(201, 168, 76, 0.5); }
 
+/* Reading progress bar */
+.reading-progress {
+  position: fixed;
+  top: 52px;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #c9a84c, #a83232);
+  z-index: 999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
+}
+
+/* Reading lamp — warm glow behind the page */
+.reading-lamp {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 800px;
+  height: 900px;
+  transform: translate(-50%, -45%);
+  background: radial-gradient(ellipse, rgba(201, 168, 76, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* Reader view */
 .library-reader {
   display: flex;
   justify-content: center;
   padding: 72px 20px 60px;
+  position: relative;
 }
 
 .book-page {
@@ -216,12 +242,26 @@
 .lib-body p { margin-bottom: 16px; text-align: justify; hyphens: auto; }
 .lib-body strong { color: #2c2418; font-weight: 700; }
 .lib-body blockquote {
-  border-left: 3px solid #b8942e; margin: 24px 0;
-  padding: 12px 22px; background: rgba(140, 110, 60, 0.06);
-  border-radius: 0 6px 6px 0; font-style: italic;
-  color: #5a4a32; font-size: 19px;
+  border: none; margin: 36px -20px;
+  padding: 28px 32px;
+  background: rgba(140, 110, 60, 0.06);
+  border-radius: 8px;
+  font-style: italic;
+  color: #4a3a22; font-size: 21px;
+  line-height: 1.7;
+  position: relative;
+  text-align: center;
 }
-.lib-body blockquote p { margin-bottom: 0; text-align: left; }
+.lib-body blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -8px; left: 16px;
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  color: rgba(184, 148, 46, 0.25);
+  line-height: 1;
+}
+.lib-body blockquote p { margin-bottom: 0; text-align: center; }
 .lib-body ul, .lib-body ol { margin: 12px 0 16px 24px; }
 .lib-body li { margin-bottom: 6px; }
 .lib-body ol li { list-style-type: decimal; }

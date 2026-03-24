@@ -1,6 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import './Library.css';
+
+function ReadingProgress() {
+  const [progress, setProgress] = useState(0);
+  useEffect(() => {
+    const onScroll = () => {
+      const h = document.documentElement;
+      const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+      setProgress(Math.min(100, pct));
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  return <div className="reading-progress" style={{ width: `${progress}%` }} />;
+}
 
 function Library({ articles }) {
   const [selected, setSelected] = useState(null);
@@ -9,6 +23,8 @@ function Library({ articles }) {
     const article = articles[selected];
     return (
       <div className="library-reader">
+        <ReadingProgress />
+        <div className="reading-lamp" />
         <div className="book-page">
           <button className="lib-back" onClick={() => setSelected(null)}>
             ← Back to shelf

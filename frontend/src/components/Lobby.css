@@ -9,46 +9,101 @@
   overflow: hidden;
 }
 
-/* Ambient background glow */
+/* Floating dust particles */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.5);
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.3; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-100px) translateX(30px); opacity: 0; }
+}
+
+/* Ambient glow */
 .lobby-ambient {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 50% 30%, rgba(201, 168, 76, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 40%, rgba(201, 168, 76, 0.07) 0%, transparent 50%),
     radial-gradient(ellipse at 30% 70%, rgba(168, 50, 50, 0.04) 0%, transparent 40%),
     radial-gradient(ellipse at 70% 60%, rgba(42, 90, 143, 0.03) 0%, transparent 40%);
   pointer-events: none;
 }
 
+/* Header */
 .lobby-header {
   text-align: center;
   margin-bottom: 60px;
   position: relative;
+  z-index: 1;
 }
 
+/* Ornament */
 .lobby-ornament {
   color: rgba(201, 168, 76, 0.3);
   font-size: 14px;
   letter-spacing: 0.8em;
   margin-bottom: 20px;
+  opacity: 0;
+  transition: opacity 0.8s ease;
 }
+.lobby-ornament.visible { opacity: 1; }
 
+/* Typewriter title */
 .lobby-title {
   font-family: 'Playfair Display', serif;
   font-weight: 900;
-  font-size: 56px;
+  font-size: 60px;
   color: #f4ead5;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   margin-bottom: 10px;
-  text-shadow: 0 2px 20px rgba(201, 168, 76, 0.15);
+  display: flex;
+  justify-content: center;
+  gap: 4px;
 }
 
+.title-letter {
+  opacity: 0;
+  transform: translateY(20px);
+  display: inline-block;
+}
+
+.lobby-title.visible .title-letter {
+  animation: letterReveal 0.5s ease forwards;
+}
+
+@keyframes letterReveal {
+  from { opacity: 0; transform: translateY(20px) scale(0.8); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Subtitle + curator */
 .lobby-subtitle {
   font-family: 'Crimson Text', serif;
   font-style: italic;
   font-size: 20px;
   color: rgba(244, 234, 213, 0.5);
   letter-spacing: 0.05em;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.7s ease;
+}
+
+.lobby-subtitle.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .lobby-rule {
@@ -56,7 +111,10 @@
   height: 2px;
   background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.4), transparent);
   margin: 20px auto;
+  transform: scaleX(0);
+  transition: transform 0.6s ease 0.2s;
 }
+.lobby-rule.visible { transform: scaleX(1); }
 
 .lobby-curator {
   font-family: 'Playfair Display', serif;
@@ -64,7 +122,10 @@
   font-weight: 700;
   color: rgba(244, 234, 213, 0.6);
   letter-spacing: 0.04em;
+  opacity: 0;
+  transition: opacity 0.6s ease 0.3s;
 }
+.lobby-curator.visible { opacity: 1; }
 
 /* Exhibit cards */
 .lobby-exhibits {
@@ -74,7 +135,11 @@
   max-width: 900px;
   width: 100%;
   position: relative;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
+.lobby-exhibits.visible { opacity: 1; }
 
 .exhibit-card {
   background: rgba(244, 234, 213, 0.03);
@@ -88,18 +153,36 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.lobby-exhibits.visible .exhibit-card {
+  animation: cardRise 0.6s ease forwards;
+}
+
+@keyframes cardRise {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .exhibit-card:hover {
   background: rgba(244, 234, 213, 0.06);
   border-color: rgba(201, 168, 76, 0.25);
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(201, 168, 76, 0.05);
 }
 
 .exhibit-icon {
   font-size: 36px;
   margin-bottom: 4px;
+  transition: transform 0.3s ease;
+}
+
+.exhibit-card:hover .exhibit-icon {
+  transform: scale(1.15);
 }
 
 .exhibit-name {
@@ -134,12 +217,16 @@
   font-size: 14px;
   color: rgba(244, 234, 213, 0.2);
   font-style: italic;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
+.lobby-footer.visible { opacity: 1; }
 
 @media (max-width: 768px) {
   .lobby-exhibits {
     grid-template-columns: 1fr;
     max-width: 400px;
   }
-  .lobby-title { font-size: 38px; }
+  .lobby-title { font-size: 40px; }
 }
