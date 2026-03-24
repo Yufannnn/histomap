@@ -1,71 +1,87 @@
 import { useState, useEffect } from 'react';
-import ArticleFeed from './components/ArticleFeed.jsx';
-import ArticleReader from './components/ArticleReader.jsx';
+import BookCover from './components/BookCover.jsx';
+import TableOfContents from './components/TableOfContents.jsx';
+import ChapterView from './components/ChapterView.jsx';
 import './App.css';
 
 function App() {
   const [articles, setArticles] = useState([]);
-  const [selectedSlug, setSelectedSlug] = useState(null);
-  const [filterTag, setFilterTag] = useState(null);
+  const [page, setPage] = useState('cover'); // 'cover' | 'toc' | index number
+  const [direction, setDirection] = useState('forward');
 
   useEffect(() => {
-    const url = filterTag ? `/api/articles?tag=${filterTag}` : '/api/articles';
-    fetch(url)
+    fetch('/api/articles')
       .then((r) => r.json())
       .then(setArticles)
       .catch(() => {});
-  }, [filterTag]);
+  }, []);
 
-  const allTags = [...new Set(articles.flatMap((a) => a.tags))].sort();
+  function goTo(target) {
+    const currentIdx = typeof page === 'number' ? page : -1;
+    const targetIdx = typeof target === 'number' ? target : -1;
+    setDirection(targetIdx > currentIdx ? 'forward' : 'back');
+    setPage(target);
+    window.scrollTo({ top: 0 });
+  }
+
+  function goNext() {
+    if (page === 'cover') goTo('toc');
+    else if (page === 'toc') goTo(0);
+    else if (typeof page === 'number' && page < articles.length - 1) goTo(page + 1);
+  }
+
+  function goPrev() {
+    if (page === 'toc') goTo('cover');
+    else if (typeof page === 'number' && page === 0) goTo('toc');
+    else if (typeof page === 'number' && page > 0) goTo(page - 1);
+  }
+
+  const totalPages = articles.length + 2; // cover + toc + chapters
+  const currentPage = page === 'cover' ? 1 : page === 'toc' ? 2 : page + 3;
 
   return (
-    <div className="app-shell">
-      <header className="app-header">
-        <div className="header-left" onClick={() => { setSelectedSlug(null); setFilterTag(null); }} style={{ cursor: 'pointer' }}>
-          <span className="header-logo">HISTOMAP</span>
-          <div className="header-divider" />
-          <span className="header-tagline">Thoughts on history</span>
-        </div>
-        <div className="header-right">
-          <span className="header-credit">by Henry Zhu Yufan</span>
-        </div>
-      </header>
+    <div className="book-shell">
+      <div className={`page-container anim-${direction}`} key={page}>
+        {page === 'cover' && (
+          <BookCover onOpen={() => goTo('toc')} />
+        )}
 
-      {selectedSlug ? (
-        <ArticleReader
-          slug={selectedSlug}
-          onBack={() => setSelectedSlug(null)}
-          onTagClick={(tag) => { setSelectedSlug(null); setFilterTag(tag); }}
-        />
-      ) : (
-        <main className="main-content">
-          {/* Tag filter bar */}
-          {allTags.length > 0 && (
-            <div className="tag-bar">
-              <button
-                className={`tag-chip ${!filterTag ? 'active' : ''}`}
-                onClick={() => setFilterTag(null)}
-              >
-                All
-              </button>
-              {allTags.map((tag) => (
-                <button
-                  key={tag}
-                  className={`tag-chip ${filterTag === tag ? 'active' : ''}`}
-                  onClick={() => setFilterTag(filterTag === tag ? null : tag)}
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
-          )}
-
-          <ArticleFeed
+        {page === 'toc' && (
+          <TableOfContents
             articles={articles}
-            onSelect={setSelectedSlug}
+            onSelect={(i) => goTo(i)}
+            onBack={() => goTo('cover')}
           />
-        </main>
-      )}
+        )}
+
+        {typeof page === 'number' && articles[page] && (
+          <ChapterView
+            article={articles[page]}
+            chapterNum={page + 1}
+            totalChapters={articles.length}
+            onGoToToc={() => goTo('toc')}
+          />
+        )}
+      </div>
+
+      {/* Page navigation */}
+      <nav className="book-nav">
+        <button
+          className="nav-btn prev"
+          onClick={goPrev}
+          disabled={page === 'cover'}
+        >
+          ←
+        </button>
+        <span className="nav-page">{currentPage} / {totalPages}</span>
+        <button
+          className="nav-btn next"
+          onClick={goNext}
+          disabled={typeof page === 'number' && page >= articles.length - 1}
+        >
+          →
+        </button>
+      </nav>
     </div>
   );
 }
