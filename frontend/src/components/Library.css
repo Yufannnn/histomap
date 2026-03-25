@@ -329,6 +329,59 @@
 .lib-body li { margin-bottom: 6px; }
 .lib-body ol li { list-style-type: decimal; }
 .lib-body a { color: #7a5a2e; text-decoration: underline; }
+
+/* Hover tooltips for annotated terms */
+.lib-body .tip {
+  position: relative;
+  color: #5a4020;
+  border-bottom: 1px dotted rgba(140, 110, 50, 0.4);
+  cursor: help;
+}
+
+.lib-body .tip::after {
+  content: attr(data-note);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c2418;
+  color: #e8dcc8;
+  font-family: 'Crimson Text', serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  white-space: normal;
+  width: max-content;
+  max-width: 300px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.lib-body .tip::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #2c2418;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.lib-body .tip:hover::after,
+.lib-body .tip:hover::before {
+  opacity: 1;
+}
 .lib-body img {
   max-width: 100%;
   height: auto;

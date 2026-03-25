@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 import { useTilt } from '../hooks/useScrollEffects.js';
 import './Library.css';
 
@@ -71,7 +72,7 @@ function Library({ articles }) {
           </header>
 
           <div className="lib-body">
-            <ReactMarkdown>{article.body}</ReactMarkdown>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{article.body}</ReactMarkdown>
           </div>
 
           <footer className="lib-footer">
