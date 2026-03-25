@@ -42,15 +42,30 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: rgba(244, 234, 213, 0.08);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(201, 168, 76, 0.15) 5%,
+    rgba(244, 234, 213, 0.08) 50%,
+    rgba(201, 168, 76, 0.15) 95%,
+    transparent
+  );
   transform: translateX(-50%);
 }
 
-/* Era markers */
+/* Era markers — scroll reveal */
 .timeline-marker {
   position: relative;
   text-align: center;
   padding: 20px 0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline-marker.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .marker-dot {
@@ -62,6 +77,17 @@
   margin: 0 auto 8px;
   position: relative;
   z-index: 2;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-marker.revealed .marker-dot {
+  animation: dotPulse 0.6s ease 0.2s;
+}
+
+@keyframes dotPulse {
+  0% { transform: scale(1); box-shadow: none; }
+  50% { transform: scale(1.8); box-shadow: 0 0 12px rgba(201, 168, 76, 0.4); }
+  100% { transform: scale(1); box-shadow: none; }
 }
 
 .marker-label {
@@ -77,25 +103,29 @@
   font-style: italic;
 }
 
-/* Article cards on timeline */
+/* Article cards on timeline — scroll reveal */
 .timeline-article {
   position: relative;
   padding: 12px 0;
   display: flex;
-  animation: taSlide 0.5s ease both;
-}
-
-@keyframes taSlide {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition-delay: var(--stagger, 0s);
 }
 
 .timeline-article.left {
   padding-right: 52%;
+  transform: translateX(-24px);
 }
 
 .timeline-article.right {
   padding-left: 52%;
+  transform: translateX(24px);
+}
+
+.timeline-article.revealed {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Dot on the center line */
@@ -123,22 +153,58 @@
   top: 32px;
   height: 2px;
   background: rgba(244, 234, 213, 0.12);
+  transition: opacity 0.3s ease 0.3s;
+  opacity: 0;
+}
+
+.timeline-article.revealed .ta-connector {
+  opacity: 1;
 }
 
 .timeline-article.left .ta-connector { right: 50%; width: calc(50% - 20px); margin-right: 12px; }
 .timeline-article.right .ta-connector { left: 50%; width: calc(50% - 20px); margin-left: 12px; }
 
 .ta-card {
+  position: relative;
+  overflow: hidden;
   background: rgba(244, 234, 213, 0.03);
   border: 1px solid rgba(244, 234, 213, 0.08);
   border-radius: 10px;
   padding: 18px 20px;
-  transition: all 0.2s;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .ta-card:hover {
   background: rgba(244, 234, 213, 0.06);
   border-color: rgba(244, 234, 213, 0.15);
+}
+
+/* Light sweep on timeline cards */
+.ta-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(244, 234, 213, 0.03) 45%,
+    rgba(244, 234, 213, 0.05) 50%,
+    rgba(244, 234, 213, 0.03) 55%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  background-position: 200% 0;
+  pointer-events: none;
+}
+
+.ta-card:hover::after {
+  animation: taSweep 0.8s ease forwards;
+}
+
+@keyframes taSweep {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
 }
 
 .timeline-article.featured .ta-card {
@@ -196,6 +262,23 @@
     padding-left: 54%;
     padding-right: 0;
   }
+  .timeline-article.left { transform: translateX(24px); }
   .ta-connector { left: calc(50% - 24px) !important; right: auto !important; }
   .timeline-line { left: 50%; }
+}
+
+@media (hover: none) {
+  .ta-card::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-marker,
+  .timeline-article {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .marker-dot { animation: none !important; }
+  .ta-card::after { display: none; }
+  .ta-connector { opacity: 1 !important; transition: none !important; }
 }

@@ -44,11 +44,14 @@
 }
 
 .coll-card {
+  position: relative;
+  overflow: hidden;
   background: rgba(244, 234, 213, 0.03);
   border: 1px solid rgba(244, 234, 213, 0.08);
   border-radius: 12px;
   padding: 24px;
-  transition: all 0.25s;
+  transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
+  transform-style: preserve-3d;
   animation: collFade 0.4s ease both;
 }
 
@@ -60,6 +63,34 @@
 .coll-card:hover {
   background: rgba(244, 234, 213, 0.05);
   border-color: rgba(244, 234, 213, 0.12);
+}
+
+/* Light sweep */
+.coll-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(244, 234, 213, 0.03) 45%,
+    rgba(244, 234, 213, 0.05) 50%,
+    rgba(244, 234, 213, 0.03) 55%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  background-position: 200% 0;
+  pointer-events: none;
+}
+
+.coll-card:hover::after {
+  animation: collSweep 0.8s ease forwards;
+}
+
+@keyframes collSweep {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
 }
 
 .coll-icon {
@@ -101,4 +132,17 @@
   color: #c9a84c;
   margin-right: 4px;
   font-size: 11px;
+}
+
+@media (hover: none) {
+  .coll-card::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coll-card {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .coll-card::after { display: none; }
 }

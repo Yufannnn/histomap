@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { useTilt } from '../hooks/useScrollEffects.js';
 import './Library.css';
 
 function ReadingProgress() {
@@ -14,6 +15,31 @@ function ReadingProgress() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
   return <div className="reading-progress" style={{ width: `${progress}%` }} />;
+}
+
+function ShelfBook({ article, index, onSelect }) {
+  const ref = useRef(null);
+  useTilt(ref, { maxDeg: 3 });
+
+  return (
+    <div
+      ref={ref}
+      className={`shelf-book ${article.featured ? 'featured' : ''}`}
+      onClick={onSelect}
+      style={{ animationDelay: `${index * 0.07}s` }}
+    >
+      <div className="book-spine" />
+      <div className="book-content">
+        {article.featured && <div className="book-badge">✦</div>}
+        <h3 className="book-title">{article.title}</h3>
+        <p className="book-excerpt">{article.excerpt}</p>
+        <div className="book-meta">
+          {article.era && <span className="book-era">{article.era}</span>}
+          <span>{article.readingTime}</span>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function Library({ articles }) {
@@ -80,23 +106,12 @@ function Library({ articles }) {
 
       <div className="shelf-grid">
         {articles.map((article, i) => (
-          <div
+          <ShelfBook
             key={article.slug}
-            className={`shelf-book ${article.featured ? 'featured' : ''}`}
-            onClick={() => { setSelected(i); window.scrollTo({ top: 0 }); }}
-            style={{ animationDelay: `${i * 0.07}s` }}
-          >
-            <div className="book-spine" />
-            <div className="book-content">
-              {article.featured && <div className="book-badge">✦</div>}
-              <h3 className="book-title">{article.title}</h3>
-              <p className="book-excerpt">{article.excerpt}</p>
-              <div className="book-meta">
-                {article.era && <span className="book-era">{article.era}</span>}
-                <span>{article.readingTime}</span>
-              </div>
-            </div>
-          </div>
+            article={article}
+            index={i}
+            onSelect={() => { setSelected(i); window.scrollTo({ top: 0 }); }}
+          />
         ))}
       </div>
     </div>

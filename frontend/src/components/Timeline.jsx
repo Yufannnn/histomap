@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from 'react';
 import './Timeline.css';
 
 const ERA_MARKERS = [
@@ -31,13 +32,36 @@ function parseEraYear(era) {
   return parseInt(s.replace(/\s*AD\s*/i, '')) || null;
 }
 
+function useScrollReveal(ref) {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } },
+      { threshold: 0.15 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [ref]);
+  return visible;
+}
+
+function TimelineItem({ children, className, style }) {
+  const ref = useRef(null);
+  const visible = useScrollReveal(ref);
+  return (
+    <div ref={ref} className={`${className} ${visible ? 'revealed' : ''}`} style={style}>
+      {children}
+    </div>
+  );
+}
+
 function Timeline({ articles }) {
-  // Assign each article a year
   const placed = articles
     .map((a) => ({ ...a, eraYear: parseEraYear(a.era) }))
     .filter((a) => a.eraYear !== null);
 
-  // Build a merged list: markers + articles, sorted by year
   const items = [];
 
   for (const marker of ERA_MARKERS) {
@@ -66,11 +90,11 @@ function Timeline({ articles }) {
         {items.map((item, i) => {
           if (item.type === 'marker') {
             return (
-              <div key={`m-${i}`} className="timeline-marker">
+              <TimelineItem key={`m-${i}`} className="timeline-marker">
                 <div className="marker-dot" />
                 <div className="marker-label">{item.label}</div>
                 <div className="marker-desc">{item.desc}</div>
-              </div>
+              </TimelineItem>
             );
           }
 
@@ -79,10 +103,10 @@ function Timeline({ articles }) {
           const a = item.article;
 
           return (
-            <div
+            <TimelineItem
               key={`a-${a.slug}`}
               className={`timeline-article ${a.featured ? 'featured' : ''} ${side}`}
-              style={{ animationDelay: `${articleIdx * 0.1}s` }}
+              style={{ '--stagger': `${articleIdx * 0.08}s` }}
             >
               <div className="ta-connector" />
               <div className="ta-dot" />
@@ -93,7 +117,7 @@ function Timeline({ articles }) {
                 <p className="ta-excerpt">{a.excerpt}</p>
                 <span className="ta-time">{a.readingTime}</span>
               </div>
-            </div>
+            </TimelineItem>
           );
         })}
       </div>

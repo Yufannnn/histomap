@@ -1,8 +1,34 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { useTilt } from '../hooks/useScrollEffects.js';
 import './Lobby.css';
 
+function ExhibitCard({ room, onEnter, delay }) {
+  const ref = useRef(null);
+  useTilt(ref, { maxDeg: 4 });
+
+  return (
+    <div
+      ref={ref}
+      className="exhibit-card"
+      onClick={() => onEnter(room.id)}
+      style={{ animationDelay: `${delay}s` }}
+    >
+      <div className="exhibit-icon">{room.icon}</div>
+      <h2 className="exhibit-name">{room.name}</h2>
+      <p className="exhibit-desc">{room.desc}</p>
+      <span className="exhibit-enter">Enter →</span>
+    </div>
+  );
+}
+
+const EXHIBITS = [
+  { id: 'library', icon: '📖', name: 'The Library', desc: 'Essays & deep dives on history. Browse the collection, read at your pace.' },
+  { id: 'timeline', icon: '⏳', name: 'The Timeline', desc: 'Walk through the ages. See where each piece fits in the grand sweep of history.' },
+  { id: 'collections', icon: '🗂', name: 'Collections', desc: 'Themed exhibits grouping related articles. Empires, battles, trade, ideas.' },
+];
+
 function Lobby({ onEnter, articleCount }) {
-  const [phase, setPhase] = useState(0); // 0=dark, 1=title, 2=subtitle, 3=cards
+  const [phase, setPhase] = useState(0);
 
   useEffect(() => {
     const t1 = setTimeout(() => setPhase(1), 300);
@@ -57,35 +83,14 @@ function Lobby({ onEnter, articleCount }) {
       </header>
 
       <div className={`lobby-exhibits ${phase >= 3 ? 'visible' : ''}`}>
-        <div className="exhibit-card" onClick={() => onEnter('library')} style={{ animationDelay: '0s' }}>
-          <div className="exhibit-icon">📖</div>
-          <h2 className="exhibit-name">The Library</h2>
-          <p className="exhibit-desc">
-            {articleCount} essays & deep dives on history.
-            Browse the collection, read at your pace.
-          </p>
-          <span className="exhibit-enter">Enter →</span>
-        </div>
-
-        <div className="exhibit-card" onClick={() => onEnter('timeline')} style={{ animationDelay: '0.12s' }}>
-          <div className="exhibit-icon">⏳</div>
-          <h2 className="exhibit-name">The Timeline</h2>
-          <p className="exhibit-desc">
-            Walk through the ages. See where each piece
-            fits in the grand sweep of history.
-          </p>
-          <span className="exhibit-enter">Enter →</span>
-        </div>
-
-        <div className="exhibit-card" onClick={() => onEnter('collections')} style={{ animationDelay: '0.24s' }}>
-          <div className="exhibit-icon">🗂</div>
-          <h2 className="exhibit-name">Collections</h2>
-          <p className="exhibit-desc">
-            Themed exhibits grouping related articles.
-            Empires, battles, trade, ideas.
-          </p>
-          <span className="exhibit-enter">Enter →</span>
-        </div>
+        {EXHIBITS.map((exhibit, i) => (
+          <ExhibitCard
+            key={exhibit.id}
+            room={{ ...exhibit, desc: i === 0 ? `${articleCount} essays & deep dives on history. Browse the collection, read at your pace.` : exhibit.desc }}
+            onEnter={onEnter}
+            delay={i * 0.12}
+          />
+        ))}
       </div>
 
       <footer className={`lobby-footer ${phase >= 3 ? 'visible' : ''}`}>

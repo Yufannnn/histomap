@@ -6,8 +6,10 @@ const router = express.Router();
 const ARTICLES_DIR = path.join(__dirname, '..', 'data', 'articles');
 
 function parseFrontmatter(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  if (!match) return { meta: {}, body: content };
+  // Normalize line endings to \n for consistent parsing
+  const normalized = content.replace(/\r\n/g, '\n');
+  const match = normalized.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!match) return { meta: {}, body: normalized };
 
   const meta = {};
   for (const line of match[1].split('\n')) {
