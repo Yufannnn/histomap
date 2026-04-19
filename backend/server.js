@@ -82,6 +82,7 @@ app.use('/api/borders', require('./routes/borders'));
 app.use('/api/narratives', require('./routes/narratives'));
 app.use('/api/search', require('./routes/search'));
 app.use('/api/articles', require('./routes/articles'));
+app.use('/api/books', require('./routes/books'));
 
 app.listen(PORT, () => {
   console.log(`Histomap backend running on http://localhost:${PORT}`);

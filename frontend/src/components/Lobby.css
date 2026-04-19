@@ -45,7 +45,7 @@
 /* Header */
 .lobby-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 28px;
   position: relative;
   z-index: 1;
 }
@@ -67,22 +67,16 @@
   font-weight: 900;
   font-size: 60px;
   color: #f4ead5;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-}
-
-.title-letter {
   opacity: 0;
   transform: translateY(20px);
-  display: inline-block;
-  filter: blur(4px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.lobby-title.visible .title-letter {
-  animation: letterReveal 0.5s ease forwards;
+.lobby-title.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes letterReveal {
@@ -131,9 +125,9 @@
 /* Exhibit cards */
 .lobby-exhibits {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: 24px;
-  max-width: 900px;
+  max-width: 760px;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -141,6 +135,20 @@
   transition: opacity 0.4s ease;
 }
 .lobby-exhibits.visible { opacity: 1; }
+
+.lobby-count {
+  max-width: 720px;
+  margin-bottom: 28px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 16px 20px;
+  border-radius: 18px;
+  background: rgba(244, 234, 213, 0.04);
+  border: 1px solid rgba(244, 234, 213, 0.08);
+  line-height: 1.7;
+  color: rgba(244, 234, 213, 0.72);
+}
 
 .exhibit-card {
   position: relative;
@@ -208,9 +216,11 @@
 }
 
 .exhibit-icon {
-  font-size: 36px;
+  font-size: 28px;
   margin-bottom: 4px;
   transition: transform 0.3s ease;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
 .exhibit-card:hover .exhibit-icon {
@@ -262,11 +272,6 @@
     max-width: 400px;
   }
   .lobby-title { font-size: 40px; }
-  .title-letter { filter: none; }
-  @keyframes letterReveal {
-    from { opacity: 0; transform: translateY(20px) scale(0.8); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-  }
 }
 
 @media (hover: none) {
@@ -274,12 +279,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .title-letter {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    filter: none !important;
-  }
+  .lobby-title { opacity: 1 !important; transform: none !important; }
   .particle { animation: none !important; opacity: 0.2 !important; }
   .exhibit-card { animation: none !important; opacity: 1 !important; transform: none !important; }
   .exhibit-card::after { display: none; }

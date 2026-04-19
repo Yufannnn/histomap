@@ -1,0 +1,178 @@
+.writings-index {
+  min-height: 100vh;
+  background: #1a1610;
+  color: #e8dcc8;
+  padding: 0 20px;
+}
+
+.writings-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 28px;
+  z-index: 900;
+  background: linear-gradient(to bottom, rgba(20, 16, 10, 0.97), rgba(20, 16, 10, 0.8), transparent);
+  backdrop-filter: blur(8px);
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+}
+
+.nav-current-label {
+  color: rgba(244, 234, 213, 0.5);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Hero */
+.writings-hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 100px 0 48px;
+  text-align: center;
+}
+
+.writings-ornament {
+  color: rgba(201, 168, 76, 0.4);
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.writings-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 48px;
+  color: #f4ead5;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.writings-subtitle {
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(244, 234, 213, 0.45);
+  max-width: 500px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+}
+
+.writings-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.4), transparent);
+  margin: 0 auto;
+}
+
+/* Cards list */
+.writings-list {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-bottom: 48px;
+}
+
+.writings-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(244, 234, 213, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  border-radius: 14px;
+  padding: 28px 32px;
+  transition: all 0.3s ease;
+}
+
+.writings-card:hover {
+  background: rgba(201, 168, 76, 0.06);
+  border-color: rgba(201, 168, 76, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.badge-star {
+  color: #c9a84c;
+  font-size: 14px;
+}
+
+.badge-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #c9a84c;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-family: 'Inter', sans-serif;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: #f4ead5;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+  font-size: 16px;
+  color: rgba(244, 234, 213, 0.5);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.card-tag {
+  padding: 2px 10px;
+  background: rgba(244, 234, 213, 0.04);
+  border: 1px solid rgba(244, 234, 213, 0.06);
+  border-radius: 16px;
+  font-size: 11px;
+  color: rgba(244, 234, 213, 0.45);
+  font-family: 'Inter', sans-serif;
+}
+
+.card-read {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #c9a84c;
+  letter-spacing: 0.02em;
+}
+
+/* Footer */
+.writings-footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 0 80px;
+  text-align: center;
+  border-top: 1px solid rgba(244, 234, 213, 0.06);
+}
+
+@media (max-width: 768px) {
+  .writings-nav { padding: 0 16px; height: 48px; }
+  .writings-hero { padding: 80px 0 36px; }
+  .writings-title { font-size: 36px; }
+  .writings-card { padding: 20px 22px; }
+  .card-title { font-size: 22px; }
+}

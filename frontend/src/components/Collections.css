@@ -134,6 +134,13 @@
   font-size: 11px;
 }
 
+.coll-themes {
+  margin-top: 16px;
+  font-size: 13px;
+  color: rgba(244, 234, 213, 0.4);
+  line-height: 1.5;
+}
+
 @media (hover: none) {
   .coll-card::after { display: none; }
 }
